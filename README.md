@@ -7,63 +7,63 @@ This software will work in Windows and Linux Enviroments. Please refer the Insta
 All user manuals and guides are available in the GUIDE/ folder for quick reference.
 
 Main Features
-🔹 Main
-Admin Dashboard
-Circulation
-Members
-Books
-eBooks
+🔹 Main-
+Admin Dashboard,
+Circulation,
+Members,
+Books,
+eBooks,
 
-🔹 Research
-Research Databases
+🔹 Research-
+Research Databases.
 
-🔹 Acquisitions & Serials
-Acquisitions
-Serials Control
+🔹 Acquisitions & Serials-
+Acquisitions,
+Serials Control.
 
-🔹 Administration
-System Settings
-Quick Actions Manager
-Loan Rules
-Staff Profiles
-Manage Notices
-Suggestions
-Fine Rates
-Backup & Restore
-Utilities Suite
-Stock Verification
-Lost & Damaged
-Payments
-Reservations
-Library Events
-Member Documents
-Computer Access
-Data Import
-Entry/Exit
-Session Logs
+🔹 Administration-
+System Settings,
+Quick Actions Manager,
+Loan Rules,
+Staff Profiles,
+Manage Notices,
+Suggestions,
+Fine Rates,
+Backup & Restore,
+Utilities Suite,
+Stock Verification,
+Lost & Damaged,
+Payments,
+Reservations,
+Library Events,
+Member Documents,
+Computer Access,
+Data Import,
+Entry/Exit,
+Session Logs.
 
-🔹 Communication
-Bulk Messaging
-Chatbot
+🔹 Communication-
+Bulk Messaging,
+Chatbot.
 
-🔹 Reports & Analytics
-Reports
-Advanced Analytics
-Cron
+🔹 Reports & Analytics-
+Reports,
+Advanced Analytics,
+Cron.
 
-🔹 Public Interfaces
-OPAC
-Digital Library Hub
-Self Kiosk
-Member Portal
+🔹 Public Interfaces-
+OPAC,
+Digital Library Hub,
+Self Kiosk,
+Member Portal.
 
-🔹 Multi‑Library (visible only if /institution directory exists)
+🔹 Multi‑Library-
 Institutions
 
-🔹 API
+🔹 API-
 REST API
 
-🔹 Account
+🔹 Account-
 Logout
 
-Please share your experience with me on WhatsApp +91 9446996482  /   +07430792144
+Please share your experience with me on WhatsApp +91 9446996482  /   +974 30792144
