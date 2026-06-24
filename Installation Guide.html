@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library ERP – Complete Installation & Migration Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f4f9;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: #1e2f3e;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #0a3a4f;
+            border-left: 5px solid #1e6f9f;
+            padding-left: 1rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin: 1.8rem 0 0.8rem 0;
+            color: #1a4f6e;
+            border-bottom: 2px solid #dce7f0;
+            padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin: 1.2rem 0 0.5rem;
+            color: #2c5a7a;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            margin: 1rem 0 0.4rem;
+            color: #2c6e9e;
+        }
+
+        p {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        ul, ol {
+            margin: 0.5rem 0 1rem 1.8rem;
+        }
+
+        li {
+            margin: 0.3rem 0;
+            font-size: 0.98rem;
+        }
+
+        code, pre {
+            background: #f0f4f8;
+            border-radius: 12px;
+            font-family: 'Courier New', 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        code {
+            padding: 0.2rem 0.4rem;
+            background: #e9ecef;
+            border-radius: 6px;
+        }
+
+        pre {
+            padding: 1rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+            margin: 1rem 0;
+            border-left: 3px solid #1e6f9f;
+            background: #f8fafc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 0.6rem 0.8rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #e9f0f5;
+            font-weight: 600;
+        }
+
+        .note {
+            background: #eef4ff;
+            padding: 0.8rem 1.2rem;
+            border-left: 4px solid #1e6f9f;
+            border-radius: 16px;
+            margin: 1rem 0;
+        }
+
+        .warning {
+            background: #fff3e0;
+            border-left-color: #e67e22;
+        }
+
+        .badge {
+            background: #1e6f9f;
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        hr {
+            margin: 1.8rem 0;
+            border: none;
+            border-top: 2px dotted #cbd5e1;
+        }
+
+        footer {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6c757d;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 1.5rem;
+            }
+            h1 { font-size: 1.6rem; }
+            h2 { font-size: 1.4rem; }
+            pre { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📚 Library ERP – Installation Guide for Windows, macOS & Linux</h1>
+    <p>This guide covers installation on <strong>Windows</strong> (XAMPP/WAMP), <strong>macOS</strong> (MAMP or native), and provides quick references for other Linux distributions.</p>
+
+    <!-- ==================== SECTION 1: SYSTEM REQUIREMENTS ==================== -->
+    <h2>1. Universal System Requirements</h2>
+    <table>
+        <tr><th>Component</th><th>Minimum Requirement</th></tr>
+        <tr><td>Web Server</td><td>Apache 2.4+ (or Nginx with PHP-FPM)</td></tr>
+        <tr><td>PHP</td><td>8.1, 8.2 or <strong>8.3</strong> (recommended)</td></tr>
+        <tr><td>PHP Extensions</td><td>pdo_sqlite, sqlite3, zip, gd, fileinfo, mbstring, curl, json, xml, intl</td></tr>
+        <tr><td>Memory</td><td>256 MB (512 MB recommended)</td></tr>
+        <tr><td>Disk Space</td><td>1 GB + space for uploads</td></tr>
+    </table>
+
+    <!-- ==================== SECTION 2: WINDOWS ==================== -->
+    <h2>2. Installation on Windows (XAMPP / WAMP)</h2>
+    <p><strong>Recommended:</strong> Use <a href="https://www.apachefriends.org/" target="_blank">XAMPP</a> (Apache + PHP + SQLite support).</p>
+
+    <h3>2.1 Install XAMPP</h3>
+    <ul>
+        <li>Download XAMPP for Windows from <a href="https://www.apachefriends.org/" target="_blank">https://www.apachefriends.org/</a> (PHP 8.2 or 8.3 version).</li>
+        <li>Run the installer – accept defaults (<code>C:\xampp</code>).</li>
+        <li>Launch XAMPP Control Panel and start <strong>Apache</strong>.</li>
+        <li>Ensure PHP extensions are enabled: open <code>C:\xampp\php\php.ini</code> and uncomment (remove semicolon) the following lines:
+            <pre><code>extension=sqlite3
+extension=gd
+extension=zip
+extension=curl
+extension=mbstring
+extension=fileinfo
+extension=intl
+;extension=zip</code></pre>
+        </li>
+        <li>Restart Apache from XAMPP Control Panel.</li>
+    </ul>
+
+    <h3>2.2 Place the Library ERP Files</h3>
+    <ul>
+        <li>Copy the <code>library-system</code> folder to <code>C:\xampp\htdocs\</code>.</li>
+        <li>Rename if desired (e.g., <code>library</code>).</li>
+    </ul>
+
+    <h3>2.3 Set Permissions (Windows)</h3>
+    <ul>
+        <li>Right‑click the <code>uploads</code>, <code>backups</code>, and <code>config</code> folders → Properties → Security → Give <strong>Modify/Write</strong> permission to <code>Everyone</code> or the web server user (<code>IUSR</code> or <code>SYSTEM</code>).</li>
+        <li>Alternatively, run the following in Command Prompt as Administrator (adjust path):
+            <pre><code>icacls "C:\xampp\htdocs\library-system\uploads" /grant Everyone:F /T
+icacls "C:\xampp\htdocs\library-system\backups" /grant Everyone:F /T
+icacls "C:\xampp\htdocs\library-system\config" /grant Everyone:F /T</code></pre>
+        </li>
+    </ul>
+
+    <h3>2.4 Access the System</h3>
+    <p>Open browser and go to <code>http://localhost/library-system/</code>. The database will be created automatically.</p>
+
+    <div class="note">
+        💡 If you get a "Forbidden" error, check that <code>.htaccess</code> files are allowed. In XAMPP, edit <code>C:\xampp\apache\conf\extra\httpd-xampp.conf</code> and ensure <code>AllowOverride All</code> is set for the htdocs directory.
+    </div>
+
+    <h3>2.5 Optional: Use WAMP (alternative)</h3>
+    <ul>
+        <li>Install WAMP from <a href="https://www.wampserver.com/" target="_blank">wampserver.com</a>.</li>
+        <li>Enable required PHP extensions via the WAMP tray icon → PHP → Extensions.</li>
+        <li>Place the library folder inside <code>C:\wamp64\www\</code>.</li>
+        <li>Access at <code>http://localhost/library-system/</code>.</li>
+    </ul>
+
+    <!-- ==================== SECTION 3: MACOS ==================== -->
+    <h2>3. Installation on macOS</h2>
+    <p>Two methods: using <strong>MAMP</strong> (simplest) or native Apache + PHP.</p>
+
+    <h3>3.1 Using MAMP (Recommended for Beginners)</h3>
+    <ul>
+        <li>Download MAMP from <a href="https://www.mamp.info/" target="_blank">https://www.mamp.info/</a> (free version).</li>
+        <li>Install and launch MAMP. Set PHP version to 8.x in preferences.</li>
+        <li>Copy the <code>library-system</code> folder to <code>/Applications/MAMP/htdocs/</code>.</li>
+        <li>Set permissions (Terminal):
+            <pre><code>cd /Applications/MAMP/htdocs
+chmod -R 755 library-system/
+chmod -R 777 library-system/uploads library-system/backups library-system/config</code></pre>
+        </li>
+        <li>Start MAMP servers and access <code>http://localhost:8888/library-system/</code> (or <code>http://localhost/library-system/</code> if ports are standard).</li>
+    </ul>
+
+    <h3>3.2 Using Native Apache & PHP (Advanced)</h3>
+    <p>macOS includes Apache and PHP, but PHP 8.3 may need to be installed via Homebrew.</p>
+    <ul>
+        <li>Install Homebrew if not already: <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></li>
+        <li>Install PHP 8.3: <code>brew install php@8.3</code></li>
+        <li>Enable Apache module: <code>sudo brew services start php@8.3</code> (or link the module).</li>
+        <li>Place library folder in <code>/Library/WebServer/Documents/</code>:
+            <pre><code>sudo cp -r library-system /Library/WebServer/Documents/</code></pre>
+        </li>
+        <li>Set permissions:
+            <pre><code>cd /Library/WebServer/Documents
+sudo chown -R _www:_www library-system/
+sudo chmod -R 755 library-system/
+sudo chmod -R 777 library-system/uploads library-system/backups library-system/config</code></pre>
+        </li>
+        <li>Edit Apache config (<code>/etc/apache2/httpd.conf</code>) to enable mod_rewrite and allow Override.</li>
+        <li>Restart Apache: <code>sudo apachectl restart</code></li>
+        <li>Access at <code>http://localhost/library-system/</code>.</li>
+    </ul>
+
+    <!-- ==================== SECTION 4: UBUNTU ==================== -->
+    <h2>4. Ubuntu Version – Installation</h2>
+
+    <h3>4.1 System Requirements for Ubuntu</h3>
+    <table>
+        <tr><th>Component</th><th>Requirement</th></tr>
+        <tr><td>Ubuntu Version</td><td>24.04 LTS (Noble Numbat) – also works on 22.04</td></tr>
+        <tr><td>Web Server</td><td>Apache 2.4</td></tr>
+        <tr><td>PHP</td><td>8.1, 8.2 or <strong>8.3</strong> (recommended)</td></tr>
+        <tr><td>PHP Extensions</td><td>pdo_sqlite, sqlite3, zip, gd, fileinfo, mbstring, curl, json, xml, intl</td></tr>
+        <tr><td>Memory</td><td>256 MB minimum (512 MB recommended)</td></tr>
+        <tr><td>Disk Space</td><td>1 GB + space for uploads (eBooks, covers, backups)</td></tr>
+    </table>
+
+    <h3>4.2 Step‑by‑Step Installation on Ubuntu</h3>
+
+    <h4>4.2.1 Update System & Install Apache</h4>
+    <pre><code>sudo apt update && sudo apt upgrade -y
+sudo apt install -y gedit
+sudo apt install -y apache2
+sudo systemctl enable apache2 && sudo systemctl start apache2</code></pre>
+
+    <h4>4.2.2 Install PHP 8.3 & Required Extensions</h4>
+    <pre><code>sudo apt install -y php8.3 libapache2-mod-php8.3 php8.3-sqlite3 php8.3-gd php8.3-zip \
+php8.3-mbstring php8.3-curl php8.3-xml php8.3-intl</code></pre>
+    <p>Verify with <code>php -v</code> (should show PHP 8.3.x).</p>
+
+    <h4>4.2.3 Enable Apache Modules & Upload Files</h4>
+    <pre><code>sudo a2enmod rewrite
+sudo systemctl restart apache2
+		
+		# Copy or Move package to /var/www/html/
+		
+Option A: If the files are already in a folder (e.g home)
+    sudo su 
+    cp -r library-system /var/www/html/
+
+Option B: If you have a ZIP file
+    cd /var/www/html
+    sudo apt install -y unzip
+    sudo unzip /path/to/library-system.zip
+
+Option C: Using Git (if you have a repository)
+    cd /var/www/html
+    sudo git clone https://your-repository-url/library-system.git
+</code></pre>
+
+    <h4>4.2.4 Set Correct Permissions</h4>
+    <pre><code>cd /var/www/html
+sudo chown -R www-data:www-data /var/www/html/library-system/
+sudo chmod -R 755 /var/www/html/library-system/
+sudo chmod -R 777 /var/www/html/library-system/uploads/
+sudo chmod -R 777 /var/www/html/library-system/backups/
+sudo chmod -R 777 /var/www/html/library-system/config/     # Important for SQLite DB creation</code></pre>
+
+    <h4>4.2.5 Configure Virtual Host (Recommended)</h4>
+    <pre><code>sudo gedit /etc/apache2/sites-available/library.conf</code></pre>
+    <p>Paste the following:</p>
+    <pre><code>&lt;VirtualHost *:80&gt;
+    ServerName library.local
+    DocumentRoot /var/www/html/library-system
+    &lt;Directory /var/www/html/library-system&gt;
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    &lt;/Directory&gt;
+    ErrorLog ${APACHE_LOG_DIR}/library-error.log
+    CustomLog ${APACHE_LOG_DIR}/library-access.log combined
+&lt;/VirtualHost&gt;</code></pre>
+    <pre><code>sudo a2ensite library.conf
+sudo a2dissite 000-default.conf
+sudo systemctl reload apache2
+
+sudo gedit /etc/hosts
+Add 127.0.0.1   library.local</code></pre>
+    <p>Optional: add <code>127.0.0.1   library.local</code> to <code>/etc/hosts</code> for local testing.</p>
+
+    <!-- ==================== SECTION 5: CENTOS/RHEL/FEDORA ==================== -->
+    <h2>5. Installation on Other Linux Distributions (CentOS/RHEL/Fedora)</h2>
+    <p>The process is similar to Ubuntu. Use your package manager (yum, dnf) to install Apache, PHP 8.x, and required extensions.</p>
+
+    <h3>5.1 Example for CentOS 9 / RHEL 9 / Fedora</h3>
+    <pre><code># Install EPEL and Remi repositories
+sudo dnf install epel-release
+sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
+sudo dnf module reset php
+sudo dnf module install php:remi-8.3
+
+# Install Apache and PHP extensions
+sudo dnf install httpd php php-sqlite3 php-gd php-zip php-mbstring php-curl php-xml php-intl
+
+# Enable and start Apache
+sudo systemctl enable httpd
+sudo systemctl start httpd
+
+# Place files in /var/www/html/
+sudo cp -r library-system /var/www/html/
+sudo chown -R apache:apache /var/www/html/library-system/
+sudo chmod -R 755 /var/www/html/library-system/
+sudo chmod -R 777 /var/www/html/library-system/{uploads,backups,config}
+
+# Allow .htaccess overrides
+sudo nano /etc/httpd/conf/httpd.conf   # set AllowOverride All for the document root
+
+sudo systemctl restart httpd</code></pre>
+    <p>Access at <code>http://your-server-ip/library-system/</code>.</p>
+
+    <!-- ==================== SECTION 6: FIRST RUN ==================== -->
+    <h2>6. First Run & Database Setup</h2>
+    <pre><code>Open your browser and go to 
+http://library.local/ (or http://localhost/library-system/)
+	-------------------------------------------------------------------------
+        | for	OPAC			http://library.local/opac		|
+        | for	Visitor Log		http://library.local/visitor	        |
+	-------------------------------------------------------------------------</code></pre>
+    <p>The system will <strong>automatically create</strong> the SQLite database and all tables on first access.</p>
+    <div class="note">✅ No manual SQL commands needed.</div>
+    <p><strong>Default admin credentials:</strong></p>
+    <ul>
+        <li>Username: <code>admin</code> &nbsp;|&nbsp; Password: <code>admin123</code></li>
+        <li>Staff test account: <code>staff1</code> / <code>staff123</code></li>
+    </ul>
+    <p>After login, immediately change the admin password via <strong>Admin → System Settings → Change Admin Password</strong>.</p>
+
+    <!-- ==================== SECTION 7: COMPOSER ==================== -->
+    <h2>7. Optional: Composer for Excel/PDF</h2>
+    <pre><code>cd /var/www/html/library-system
+sudo apt install -y composer
+composer require phpoffice/phpspreadsheet
+composer require dompdf/dompdf</code></pre>
+    <p>These enable Excel (.xlsx) import and PDF report export. CSV import works without them.</p>
+
+    <!-- ==================== SECTION 8: CRON JOBS ==================== -->
+    <h2>8. Cron Jobs (Automated Tasks)</h2>
+    <p>Edit crontab (<code>sudo crontab -e</code>) and add the following lines:</p>
+    <pre><code># Daily tasks (overdue reminders, fines, email queue)
+0 2 * * * /usr/bin/php /var/www/html/library-system/cron/daily_tasks.php >> /var/log/library-cron.log 2>&1
+
+# Process email queue every 5 minutes (if using SMTP)
+*/5 * * * * /usr/bin/php /var/www/html/library-system/cron/process_email_queue.php >> /var/log/library-email.log 2>&1
+
+# Weekly backup rotation & Google Drive sync (optional)
+0 3 * * 1 /usr/bin/php /var/www/html/library-system/cron/weekly_tasks.php >> /var/log/library-cron.log 2>&1</code></pre>
+    <p>Adjust paths according to your installation.</p>
+
+    <!-- ==================== SECTION 9: PHP TUNING ==================== -->
+    <h2>9. PHP Tuning (for large uploads)</h2>
+    <pre><code>sudo gedit /etc/php/8.3/apache2/php.ini</code></pre>
+    <p>Set:</p>
+    <pre><code>upload_max_filesize = 100M
+post_max_size = 100M
+max_execution_time = 600
+memory_limit = 512M</code></pre>
+    <p>Restart Apache: <code>sudo systemctl restart apache2</code></p>
+
+    <!-- ==================== SECTION 10: SECURITY ==================== -->
+    <h2>10. Security Recommendations</h2>
+    <ul>
+        <li><strong>Change all default passwords</strong> (admin, staff1).</li>
+        <li><strong>Enable HTTPS</strong> with Let's Encrypt: <code>sudo certbot --apache -d yourdomain.com</code></li>
+        <li>Ensure <code>.htaccess</code> files are active (block config/, backups/, vendor/).</li>
+        <li>Regularly update system: <code>sudo apt update &amp;&amp; sudo apt upgrade -y</code></li>
+    </ul>
+
+    <!-- ==================== SECTION 11: TROUBLESHOOTING ==================== -->
+    <h2>11. Troubleshooting Quick Reference</h2>
+    <table>
+        <tr><th>Issue</th><th>Solution</th></tr>
+        <tr><td>White screen / 500 error</td><td>Check Apache error logs: <code>sudo tail -f /var/log/apache2/error.log</code>. Verify PHP extensions.</td></tr>
+        <tr><td>Database not created</td><td>Ensure <code>config/</code> is writable (<code>chmod 777 config/</code>).</td></tr>
+        <tr><td>Upload fails</td><td>Check <code>uploads/</code> permissions and PHP <code>upload_max_filesize</code>.</td></tr>
+        <tr><td>Email not sending</td><td>Test SMTP in Settings → Notifications. Check queue with <code>php cron/process_email_queue.php</code>.</td></tr>
+        <tr><td>PDF export blank</td><td>Install dompdf: <code>composer require dompdf/dompdf</code> or use browser print.</td></tr>
+    </table>
+
+    <!-- ==================== SECTION 12: UNINSTALL ==================== -->
+    <h2>12. Uninstall (if needed)</h2>
+    <pre><code>sudo a2dissite library.conf
+sudo rm -rf /var/www/html/library-system
+sudo systemctl reload apache2</code></pre>
+
+    <!-- ==================== FOOTER / SUPPORT ==================== -->
+    <footer>
+        <p>📖 Library ERP – Installation & Migration Guide v1.0<br>
+        For support, refer to the software documentation or contact your system administrator.</p>
+        <p style="font-size:0.8rem;">Share your experience to Whatsapp +91 9446996482 / +974 30792144 / Email: sameemonm1@gmail.com</p>
+    </footer>
+</div>
+</body>
+</html>
