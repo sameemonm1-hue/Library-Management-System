@@ -218,9 +218,11 @@ icacls "C:\xampp\htdocs\library-system\config" /grant Everyone:F /T</code></pre>
 
     <h3>2.4 Access the System</h3>
     <p>Open browser and go to <code>http://localhost/library-system/</code>. The database will be created automatically.</p>
-               <p>OPAC=     <code>http://localhost/library-system/opac</code></p>  <p>VISITOR LOG=    <code>http://localhost/library-system/visitor </p></code>
-
+               <p>OPAC=     <code>http://localhost/library-system/opac</code></p>  <p>VISITOR LOG=    <code>http://localhost/library-system/visitor </p>
+</code>
+ Default Username= <b>admin</b>       Password= <b>admin123</b>
     <div class="note">
+
         💡 If you get a "Forbidden" error, check that <code>.htaccess</code> files are allowed. In XAMPP, edit <code>C:\xampp\apache\conf\extra\httpd-xampp.conf</code> and ensure <code>AllowOverride All</code> is set for the htdocs directory.
     </div>
 
