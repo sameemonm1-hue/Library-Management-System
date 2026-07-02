@@ -1,4 +1,4 @@
-A complete, web‑based Library Management System built for academic institutions. It will ptovide new experiece in your Library
+A complete, web‑based Library Management System built for academic institutions. It will ptovide new experiece in your Library.,Suitable for Windows and Linux Enviroments.
 
 It handles every library operation: circulation (issue/return/renew/fines), member management (students, faculty, staff with categories), catalog (books, eBooks, serials), acquisitions (orders, vendors), research databases, financials (payments, budgets), reports, notifications (email/SMS/WhatsApp), OPAC (online public access), self‑service kiosk, computer lab booking, multi‑cloud backup, and more – all in English, Hindi, and Arabic (RTL).
 
