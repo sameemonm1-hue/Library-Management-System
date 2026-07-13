@@ -1,153 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library ERP – Complete Installation & Migration Guide</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library ERP – Complete Installation Guide</title>
     <style>
+        /* ── RESET & BASE ── */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             background: #f0f4f9;
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            line-height: 1.5;
+            line-height: 1.6;
             color: #1e2f3e;
             padding: 2rem 1rem;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
+            background: #ffffff;
             border-radius: 28px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
             padding: 2rem 2rem 2.5rem;
         }
 
+        /* ── TYPOGRAPHY ── */
         h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: #0a3a4f;
-            border-left: 5px solid #1e6f9f;
-            padding-left: 1rem;
+            border-left: 6px solid #1e6f9f;
+            padding-left: 1.2rem;
         }
-
         h2 {
-            font-size: 1.6rem;
-            margin: 1.8rem 0 0.8rem 0;
+            font-size: 1.7rem;
+            margin: 2rem 0 0.8rem 0;
             color: #1a4f6e;
-            border-bottom: 2px solid #dce7f0;
-            padding-bottom: 0.3rem;
+            border-bottom: 3px solid #dce7f0;
+            padding-bottom: 0.4rem;
         }
-
         h3 {
             font-size: 1.3rem;
-            margin: 1.2rem 0 0.5rem;
+            margin: 1.4rem 0 0.6rem;
             color: #2c5a7a;
         }
-
         h4 {
             font-size: 1.1rem;
             margin: 1rem 0 0.4rem;
             color: #2c6e9e;
         }
-
         p {
             margin-bottom: 0.8rem;
-            font-size: 1rem;
         }
-
-        ul, ol {
+        ul,
+        ol {
             margin: 0.5rem 0 1rem 1.8rem;
         }
-
         li {
-            margin: 0.3rem 0;
-            font-size: 0.98rem;
+            margin: 0.25rem 0;
+        }
+        a {
+            color: #1e6f9f;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
 
-        code, pre {
+        /* ── CODE & TERMINAL ── */
+        code,
+        pre {
             background: #f0f4f8;
-            border-radius: 12px;
+            border-radius: 10px;
             font-family: 'Courier New', 'Fira Code', monospace;
             font-size: 0.9rem;
         }
-
         code {
-            padding: 0.2rem 0.4rem;
+            padding: 0.2rem 0.5rem;
             background: #e9ecef;
-            border-radius: 6px;
+            border-radius: 5px;
         }
-
         pre {
-            padding: 1rem;
+            padding: 1rem 1.2rem;
             overflow-x: auto;
             white-space: pre-wrap;
             word-break: break-word;
             margin: 1rem 0;
-            border-left: 3px solid #1e6f9f;
+            border-left: 4px solid #1e6f9f;
             background: #f8fafc;
         }
+        .terminal {
+            background: #1e2f3e;
+            color: #e9ecef;
+            padding: 1.2rem 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            border-left: 4px solid #ffd700;
+        }
+        .terminal code,
+        .terminal pre {
+            background: transparent;
+            color: #e9ecef;
+            padding: 0;
+            border: none;
+            font-size: 0.95rem;
+        }
+        .terminal .comment {
+            color: #8ab4c8;
+        }
+        .terminal .prompt {
+            color: #7eca9c;
+        }
 
+        /* ── TABLES ── */
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 1.2rem 0;
             font-size: 0.95rem;
         }
-
-        th, td {
+        th,
+        td {
             border: 1px solid #cbd5e1;
             padding: 0.6rem 0.8rem;
             text-align: left;
             vertical-align: top;
         }
-
         th {
             background: #e9f0f5;
             font-weight: 600;
         }
 
+        /* ── NOTE BOXES ── */
         .note {
             background: #eef4ff;
             padding: 0.8rem 1.2rem;
-            border-left: 4px solid #1e6f9f;
-            border-radius: 16px;
+            border-left: 5px solid #1e6f9f;
+            border-radius: 12px;
             margin: 1rem 0;
         }
-
-        .warning {
+        .note.warning {
             background: #fff3e0;
             border-left-color: #e67e22;
         }
-
-        .success {
+        .note.success {
             background: #e6f7e6;
             border-left-color: #28a745;
         }
-
-        .badge {
-            background: #1e6f9f;
-            color: white;
-            font-size: 0.75rem;
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            display: inline-block;
-            margin-right: 0.5rem;
+        .note.danger {
+            background: #fde8e8;
+            border-left-color: #dc3545;
         }
 
-        hr {
+        /* ── HIGHLIGHT BOXES ── */
+        .highlight-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin: 1rem 0;
+        }
+
+        /* ── DOWNLOAD BOX ── */
+        .download-box {
+            background: linear-gradient(135deg, #1a4f6e 0%, #1e6f9f 100%);
+            color: #fff;
+            padding: 1.8rem 2rem;
+            border-radius: 16px;
+            margin: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(30, 111, 159, 0.3);
+        }
+        .download-box h2 {
+            color: #fff;
+            border-bottom: none;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        .download-box p {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+        .download-btn {
+            display: inline-block;
+            background: #ffd700;
+            color: #1a4f6e;
+            padding: 0.9rem 2.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+            background: #ffed4a;
+            text-decoration: none;
+        }
+        .github-link {
+            color: #ffd700;
+            font-weight: 700;
+        }
+        .github-link:hover {
+            color: #ffed4a;
+            text-decoration: underline;
+        }
+
+        /* ── RESET TO DEFAULT HIGHLIGHT ── */
+        .reset-highlight {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 3px solid #f39c12;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
             margin: 1.8rem 0;
+            box-shadow: 0 4px 20px rgba(243, 156, 18, 0.25);
+            text-align: center;
+        }
+        .reset-highlight h3 {
+            color: #b7950b;
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+        .reset-highlight .badge-reset {
+            display: inline-block;
+            background: #f39c12;
+            color: #fff;
+            font-weight: 700;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin: 0.3rem 0;
+        }
+        .reset-highlight code {
+            background: #fff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #b7950b;
+        }
+
+        /* ── MISC ── */
+        .badge {
+            background: #1e6f9f;
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-right: 0.4rem;
+        }
+        hr {
+            margin: 2rem 0;
             border: none;
             border-top: 2px dotted #cbd5e1;
         }
-
         footer {
             margin-top: 2.5rem;
             text-align: center;
@@ -156,402 +269,353 @@
             border-top: 1px solid #e2e8f0;
             padding-top: 1.5rem;
         }
-
-        .highlight-box {
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 12px;
-            padding: 1.2rem;
-            margin: 1rem 0;
-        }
-
-        .download-box {
-            background: linear-gradient(135deg, #1a4f6e 0%, #1e6f9f 100%);
-            color: white;
-            padding: 1.5rem 2rem;
-            border-radius: 16px;
-            margin: 1.5rem 0;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(30, 111, 159, 0.3);
-        }
-
-        .download-box h2 {
-            color: white;
-            border-bottom: none;
-            margin-top: 0;
-            font-size: 1.8rem;
-        }
-
-        .download-box p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .download-btn {
-            display: inline-block;
-            background: #ffd700;
-            color: #1a4f6e;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-        }
-
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
-            background: #ffed4a;
-        }
-
-        .github-link {
-            color: #ffd700;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-
-        .github-link:hover {
-            color: #ffed4a;
-        }
-
-        /* ===== IMPROVED MANUAL INSTALL BOX ===== */
-        .manual-install-box {
-            background: #e8f0fe;
-            border: 3px solid #1a4f6e;
-            border-radius: 16px;
-            padding: 1.8rem 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .manual-install-box h3 {
-            margin-top: 0;
-            color: #0a3a4f;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .manual-install-box h3::before {
-            content: "⚡";
-            font-size: 2rem;
-        }
-
-        .cmd-highlight {
-            background: #1e2f3e;
-            color: #e9ecef;
-            padding: 1.2rem;
-            border-radius: 12px;
-            font-family: 'Courier New', monospace;
-            margin: 1rem 0;
-            overflow-x: auto;
-            border-left: 4px solid #ffd700;
-        }
-
-        .cmd-highlight code {
-            background: transparent;
-            color: #e9ecef;
-            padding: 0;
-            font-size: 0.95rem;
-        }
-
-        .cmd-highlight pre {
-            background: transparent;
-            border: none;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-        }
-
-        .cmd-highlight .comment {
-            color: #6c8a9e;
-        }
-
-        .manual-install-box .note {
-            background: #dce7f0;
-            border-left-color: #1a4f6e;
-        }
-
         .folder-structure {
             background: #f1f5f9;
             border-radius: 8px;
-            padding: 0.8rem 1.2rem;
+            padding: 0.6rem 1.2rem;
             font-family: monospace;
             margin: 0.5rem 0;
         }
 
+        /* ── RESPONSIVE ── */
         @media (max-width: 700px) {
             .container {
-                padding: 1.5rem;
+                padding: 1.2rem;
             }
-            h1 { font-size: 1.6rem; }
-            h2 { font-size: 1.4rem; }
-            pre { font-size: 0.8rem; }
-            .download-box { padding: 1rem; }
-            .download-btn { padding: 0.8rem 1.5rem; font-size: 1rem; }
-            .manual-install-box { padding: 1rem; }
+            h1 {
+                font-size: 1.6rem;
+                padding-left: 0.8rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .download-box {
+                padding: 1.2rem;
+            }
+            .download-btn {
+                padding: 0.7rem 1.8rem;
+                font-size: 1rem;
+            }
+            .reset-highlight {
+                padding: 1rem;
+            }
+            .reset-highlight h3 {
+                font-size: 1.3rem;
+            }
+            pre,
+            .terminal {
+                font-size: 0.8rem;
+                padding: 0.8rem;
+            }
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>📚 Library ERP – Complete Installation & Migration Guide</h1>
-    <p>This comprehensive guide covers installation on <strong>Windows</strong> (XAMPP/WAMP), <strong>macOS</strong> (MAMP or native), <strong>Ubuntu</strong>, and other Linux distributions.</p>
 
-    <!-- ==================== DOWNLOAD SECTION ==================== -->
+<div class="container">
+
+    <!-- ============================================================ -->
+    <!--  HEADER                                                       -->
+    <!-- ============================================================ -->
+    <h1>📚 Library ERP – Complete Installation &amp; Deployment Guide</h1>
+    <p style="font-size: 1.1rem; color: #2c5a7a;">
+        Step‑by‑step instructions for <strong>Windows</strong> (XAMPP / WAMP),
+        <strong>macOS</strong> (MAMP / native), and <strong>Linux</strong> (Ubuntu / CentOS).
+        Includes <strong>performance tuning</strong>, <strong>security hardening</strong>,
+        and <strong>error‑free</strong> deployment practices.
+    </p>
+
+    <!-- ============================================================ -->
+    <!--  DOWNLOAD BOX                                                 -->
+    <!-- ============================================================ -->
     <div class="download-box">
-        <h2>📥 <strong>DOWNLOAD FROM GITHUB</strong></h2>
-        <p style="font-size: 1.2rem;">Get the latest version of Library ERP</p>
-        <a href="https://github.com/sameemonm1-hue/library-system/archive/main.zip" class="download-btn" target="_blank">
-            ⬇️ <strong>Download ZIP</strong>
-        </a>
-        <p style="margin-top: 1rem; font-size: 0.95rem;">
-            <strong>GitHub Repository:</strong> 
-            <a href="https://github.com/sameemonm1-hue/library-system" target="_blank" class="github-link">
-                https://github.com/sameemonm1-hue/library-system
+        <h2>📥 Download from GitHub</h2>
+        <p>
+            <strong>Repository:</strong>
+            <a href="https://github.com/sameemonm1-hue/Library-Management-System"
+               target="_blank" class="github-link">
+                sameemonm1-hue/Library-Management-System
             </a>
         </p>
-        <p style="font-size: 0.85rem; opacity: 0.9;">
+        <a href="https://github.com/sameemonm1-hue/Library-Management-System/archive/main.zip"
+           class="download-btn" target="_blank">
+            ⬇️ Download ZIP
+        </a>
+        <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.9;">
             ⭐ Star the repository on GitHub to support the project!
         </p>
     </div>
 
-    <!-- ==================== SECTION: MANUAL INSTALLATION (HIGHLIGHTED) ==================== -->
-    <div class="manual-install-box">
-        <h3>📋 Manual Installation – Quick Start (Linux / Ubuntu / CentOS)</h3>
-        <p>Use these commands to <strong>clone or download</strong> the repository directly to your server's web root.</p>
-
+    <!-- ============================================================ -->
+    <!--  EXTRACTION INSTRUCTION (CRITICAL)                            -->
+    <!-- ============================================================ -->
+    <div class="highlight-box" style="border-left: 5px solid #1e6f9f;">
+        <h3 style="margin-top: 0;">📂 Important – Locate the Application Folder</h3>
+        <p>
+            After downloading the ZIP file, <strong>extract</strong> it. Inside the extracted
+            folder (<code>Library-Management-System-main</code>) you will find a
+            <strong>ZIP file</strong> named <code>library-system.zip</code>.
+        </p>
+        <p>
+            <strong>Extract <code>library-system.zip</code></strong> – this contains the
+            actual application. The extracted folder <code>library-system</code> is what
+            you will copy to your web server's document root.
+        </p>
         <div class="folder-structure">
-            <strong>📁 Important – Folder Structure:</strong> The ZIP file extracts as <code>Library-Management-System-main</code> which contains a folder named <code>library-system</code> (the actual application). The commands below handle this automatically.
-        </div>
-
-        <div class="cmd-highlight">
-            <pre><code><span class="comment"># Option 1: Clone with Git (recommended for easy updates)</span>
-git clone https://github.com/sameemonm1-hue/library-system.git
-
-<span class="comment"># Option 2: Download and extract the ZIP</span>
-wget https://github.com/sameemonm1-hue/library-system/archive/main.zip
-unzip main.zip
-mv library-system-main/library-system ./   <span class="comment"># move the inner folder to current directory</span>
-rm -rf library-system-main main.zip        <span class="comment"># clean up</span>
-
-<span class="comment"># Finally, move the 'library-system' folder to your web root (e.g., /var/www/html/)</span>
-sudo mv library-system /var/www/html/</code></pre>
-        </div>
-
-        <div class="note">
-            💡 <strong>Pro Tip:</strong> Using <code>git clone</code> lets you pull future updates with a single <code>git pull origin main</code> command.
-        </div>
-        <div class="note success">
-            ✅ After moving the folder, continue with the <strong>permissions and virtual host</strong> setup in the platform‑specific sections below.
+            Library-Management-System-main/<br />
+            &nbsp;&nbsp;├── library-system.zip &nbsp;← <strong>extract this</strong><br />
+            &nbsp;&nbsp;└── (other files)<br /><br />
+            After extraction:<br />
+            &nbsp;&nbsp;└── library-system/ &nbsp;← <strong>application folder</strong>
         </div>
     </div>
 
-    <!-- ==================== SECTION 1: SYSTEM REQUIREMENTS ==================== -->
-    <h2>1. Universal System Requirements</h2>
+    <!-- ============================================================ -->
+    <!--  SYSTEM REQUIREMENTS                                          -->
+    <!-- ============================================================ -->
+    <h2>1. System Requirements</h2>
     <table>
         <tr><th>Component</th><th>Minimum Requirement</th></tr>
         <tr><td>Web Server</td><td>Apache 2.4+ (or Nginx with PHP-FPM)</td></tr>
-        <tr><td>PHP</td><td>8.1, 8.2 or <strong>8.3</strong> (recommended)</td></tr>
-        <tr><td>PHP Extensions</td><td>pdo_sqlite, sqlite3, zip, gd, fileinfo, mbstring, curl, json, xml, intl</td></tr>
+        <tr><td>PHP</td><td><strong>8.1</strong>, 8.2 or <strong>8.3</strong> (recommended)</td></tr>
+        <tr><td>PHP Extensions (critical)</td><td>pdo_sqlite, sqlite3, zip, gd, fileinfo, mbstring, curl, json, xml, intl</td></tr>
         <tr><td>Memory</td><td>256 MB (512 MB recommended)</td></tr>
         <tr><td>Disk Space</td><td>1 GB + space for uploads</td></tr>
     </table>
-
-    <!-- ==================== SECTION 2: WINDOWS ==================== -->
-    <h2>2. Installation on Windows (XAMPP)</h2>
-    <p><strong>Recommended:</strong> Use <a href="https://www.apachefriends.org/" target="_blank">XAMPP</a> (Apache + PHP + SQLite support).</p>
-
-    <h3>2.1 Download Library ERP from GitHub</h3>
-    <div class="highlight-box">
-        <p><strong>⬇️ Step 1:</strong> Download the software from GitHub:</p>
-        <ul>
-            <li><strong>Option A:</strong> Click the <strong>"Download ZIP"</strong> button in the download box above.</li>
-            <li><strong>Option B:</strong> Visit <a href="https://github.com/sameemonm1-hue/library-system" target="_blank"><strong>https://github.com/sameemonm1-hue/library-system</strong></a> and click the green <strong>"Code"</strong> button → <strong>"Download ZIP"</strong>.</li>
-            <li><strong>Option C:</strong> Use Git: <code>git clone https://github.com/sameemonm1-hue/library-system.git</code></li>
-        </ul>
-        <div class="note">
-            💡 <strong>Always download from the official GitHub repository</strong> to ensure you have the latest version and security updates.
-        </div>
+    <div class="note">
+        💡 <strong>Performance tip:</strong> Enable OPCache for faster execution.
+        In <code>php.ini</code>, set <code>opcache.enable=1</code> and
+        <code>opcache.memory_consumption=128</code>.
     </div>
 
-    <h3>2.2 Install XAMPP</h3>
+    <!-- ============================================================ -->
+    <!--  WINDOWS (XAMPP)                                              -->
+    <!-- ============================================================ -->
+    <h2>2. Windows – XAMPP</h2>
+
+    <h3>2.1 Install XAMPP</h3>
     <ul>
-        <li>Download XAMPP for Windows from <a href="https://www.apachefriends.org/" target="_blank">https://www.apachefriends.org/</a> (PHP 8.2 or 8.3 version).</li>
+        <li>Download XAMPP for Windows from <a href="https://www.apachefriends.org/" target="_blank">apachefriends.org</a> (PHP 8.2 or 8.3 version).</li>
         <li>Run the installer – accept defaults (<code>C:\xampp</code>).</li>
         <li>Launch XAMPP Control Panel and start <strong>Apache</strong>.</li>
     </ul>
 
-    <h3>2.3 Enable ZipArchive Extension (Critical for Backups)</h3>
-    <div class="highlight-box">
-        <p><strong>⚠️ Important:</strong> If you see the error <em>"ZipArchive not available. Backups will be saved as folders"</em>, follow these steps:</p>
-        <ol>
-            <li>Open <code>C:\xampp\php\php.ini</code> in Notepad or any text editor.</li>
-            <li>Press <strong>Ctrl + F</strong> and search for <code>;extension=zip</code></li>
-            <li><strong>Remove the semicolon (;)</strong> to uncomment it:
-                <pre><code>extension=zip</code></pre>
-            </li>
-            <li>If you find <code>;extension=php_zip.dll</code> instead, change it to:
-                <pre><code>extension=php_zip.dll</code></pre>
-            </li>
-            <li>If the line doesn't exist, add it at the bottom of the file.</li>
-            <li><strong>Save</strong> the file and <strong>restart Apache</strong> from XAMPP Control Panel.</li>
-        </ol>
-        <div class="note success">
-            ✅ <strong>Verify:</strong> Create a <code>phpinfo()</code> file and search for "zip" – you should see a section confirming ZipArchive is enabled.
-        </div>
-    </div>
-
-    <h3>2.4 Enable All Required PHP Extensions</h3>
-    <p>In the same <code>php.ini</code> file, uncomment (remove semicolon) these lines:</p>
-    <pre><code>extension=sqlite3
+    <h3>2.2 Enable Required PHP Extensions</h3>
+    <ul>
+        <li>Open <code>C:\xampp\php\php.ini</code> in Notepad.</li>
+        <li>Uncomment (remove the leading <code>;</code>) these lines:
+            <pre>extension=sqlite3
 extension=gd
-extension=zip          ← Critical for compressed backups
+extension=zip
 extension=curl
 extension=mbstring
 extension=fileinfo
-extension=intl</code></pre>
-    <p><strong>Restart Apache</strong> after making changes.</p>
-
-    <h3>2.5 Place the Library ERP Files</h3>
-    <ul>
-        <li><strong>Extract the downloaded ZIP file</strong> from GitHub.</li>
-        <li>Inside the extracted <code>Library-Management-System-main</code> folder, locate the <code>library-system</code> folder (this contains the application).</li>
-        <li>Copy the <code>library-system</code> folder to <code>C:\xampp\htdocs\</code>.</li>
-        <li>Rename if desired (e.g., <code>library</code>).</li>
-    </ul>
-
-    <h3>2.6 Set Permissions (Windows)</h3>
-    <ul>
-        <li>Right‑click the <code>uploads</code>, <code>backups</code>, and <code>config</code> folders (inside the copied <code>library-system</code> folder) → Properties → Security → Give <strong>Modify/Write</strong> permission to <code>Everyone</code> or the web server user (<code>IUSR</code> or <code>SYSTEM</code>).</li>
-        <li>Alternatively, run the following in Command Prompt as Administrator (adjust path):
-            <pre><code>icacls "C:\xampp\htdocs\library-system\uploads" /grant Everyone:F /T
-icacls "C:\xampp\htdocs\library-system\backups" /grant Everyone:F /T
-icacls "C:\xampp\htdocs\library-system\config" /grant Everyone:F /T</code></pre>
+extension=intl</pre>
         </li>
+        <li><strong>Save</strong> and <strong>restart Apache</strong> from the XAMPP Control Panel.</li>
     </ul>
 
-    <h3>2.7 Access the System</h3>
-    <p>Open browser and go to <code>http://localhost/library-system/</code>. The database will be created automatically.</p>
+    <h3>2.3 Deploy the Application</h3>
     <ul>
-        <li><strong>OPAC:</strong> <code>http://localhost/library-system/opac</code></li>
-        <li><strong>Visitor Log:</strong> <code>http://localhost/library-system/visitor</code></li>
+        <li>Extract the downloaded <code>Library-Management-System-main.zip</code>.</li>
+        <li>Inside it, find and extract <code>library-system.zip</code> → you get the <code>library-system</code> folder.</li>
+        <li>Copy the <code>library-system</code> folder to <code>C:\xampp\htdocs\</code>.</li>
     </ul>
-    <p><strong>Default Login:</strong> Username: <b>admin</b> | Password: <b>admin123</b></p>
-    
-    <div class="note">
-        💡 If you get a "Forbidden" error, check that <code>.htaccess</code> files are allowed. In XAMPP, edit <code>C:\xampp\apache\conf\extra\httpd-xampp.conf</code> and ensure <code>AllowOverride All</code> is set for the htdocs directory.
+
+    <h3>2.4 Set Permissions</h3>
+    <p>Right‑click the <code>uploads</code>, <code>backups</code>, and <code>config</code> folders inside <code>library-system</code> → Properties → Security → give <strong>Modify/Write</strong> permission to <code>Everyone</code> or the web server user.</p>
+    <p>Alternatively, run as Administrator:</p>
+    <pre>icacls "C:\xampp\htdocs\library-system\uploads" /grant Everyone:F /T
+icacls "C:\xampp\htdocs\library-system\backups" /grant Everyone:F /T
+icacls "C:\xampp\htdocs\library-system\config" /grant Everyone:F /T</pre>
+
+<div class="note warning">
+        ⚠️ <strong>Refresh to create database:</strong> If the database is <strong>not</strong> created automatically on the first visit,
+        simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests to initialise all tables.
+        Ensure the <code>config/</code> folder is writable (permissions already set above).
     </div>
 
-    <h3>2.8 Alternative: WAMP</h3>
+    <h3>2.5 Access the System</h3>
+    <p>Open browser: <a href="http://localhost/library-system/" target="_blank">http://localhost/library-system/</a></p>
     <ul>
-        <li>Install WAMP from <a href="https://www.wampserver.com/" target="_blank">wampserver.com</a>.</li>
-        <li>Enable required PHP extensions via the WAMP tray icon → PHP → Extensions (specifically enable <strong>php_zip</strong>).</li>
-        <li>Place the <code>library-system</code> folder inside <code>C:\wamp64\www\</code>.</li>
-        <li>Access at <code>http://localhost/library-system/</code>.</li>
+        <li><strong>Default login:</strong> <code>admin</code> / <code>admin123</code></li>
+        <li><strong>OPAC:</strong> <a href="http://localhost/library-system/opac" target="_blank">http://localhost/library-system/opac</a></li>
+        <li><strong>Visitor Log:</strong> <a href="http://localhost/library-system/visitor" target="_blank">http://localhost/library-system/visitor</a></li>
     </ul>
 
-    <!-- ==================== SECTION 3: MACOS ==================== -->
-    <h2>3. Installation on macOS</h2>
-    <p>Two methods: using <strong>MAMP</strong> (simplest) or native Apache + PHP.</p>
-
-    <h3>3.1 Download from GitHub</h3>
-    <div class="highlight-box">
-        <p><strong>⬇️ Download the package:</strong></p>
-        <ul>
-            <li>Visit <a href="https://github.com/sameemonm1-hue/library-system" target="_blank"><strong>https://github.com/sameemonm1-hue/library-system</strong></a></li>
-            <li>Click the green <strong>"Code"</strong> button → <strong>"Download ZIP"</strong></li>
-            <li>Or use Git: <code>git clone https://github.com/sameemonm1-hue/library-system.git</code></li>
-        </ul>
-        <div class="note">
-            After extraction, locate the <code>library-system</code> folder inside <code>Library-Management-System-main</code> – that is the application folder.
+    <div class="reset-highlight">
+        <h3>⚙️ <strong>RESET TO DEFAULT</strong> – System Configuration</h3>
+        <p style="font-size: 1.1rem;">
+            After installation, you can restore all system settings to their
+            <strong>factory defaults</strong> with a single click.
+        </p>
+        <p>
+            <span class="badge-reset">📍 Navigation</span>
+            <strong style="font-size: 1.2rem;">
+                Admin Dashboard → System Settings → System Configuration
+            </strong>
+        </p>
+        <p>
+            <span class="badge-reset">🔘 Action</span>
+            Click the <strong style="background: #f39c12; color: #fff; padding: 0.2rem 1rem; border-radius: 30px;">RESET TO DEFAULT</strong>
+            button – all settings will be restored to their original values.
+        </p>
+        <div class="note" style="background: #fff8e1; border-left-color: #f39c12; text-align: left;">
+            💡 This is useful if you have made many changes and want to start fresh,
+            or if you encounter configuration issues.
         </div>
     </div>
 
-    <h3>3.2 Using MAMP (Recommended for Beginners)</h3>
+    <h3>2.6 Windows – WAMP (Alternative)</h3>
     <ul>
-        <li>Download MAMP from <a href="https://www.mamp.info/" target="_blank">https://www.mamp.info/</a> (free version).</li>
-        <li>Install and launch MAMP. Set PHP version to 8.x in preferences.</li>
-        <li>Copy the extracted <code>library-system</code> folder to <code>/Applications/MAMP/htdocs/</code>.</li>
-        <li>Set permissions (Terminal):
-            <pre><code>cd /Applications/MAMP/htdocs
-chmod -R 755 library-system/
-chmod -R 777 library-system/uploads library-system/backups library-system/config</code></pre>
-        </li>
-        <li><strong>Enable ZipArchive in MAMP:</strong> Open <code>/Applications/MAMP/bin/php/php8.x/conf/php.ini</code> and uncomment <code>extension=zip</code>.</li>
-        <li>Start MAMP servers and access <code>http://localhost:8888/library-system/</code>.</li>
+        <li>Install WAMP from <a href="https://www.wampserver.com/" target="_blank">wampserver.com</a>.</li>
+        <li>Enable PHP extensions via the WAMP tray icon → PHP → Extensions (enable <strong>php_zip</strong>).</li>
+        <li>Place the <code>library-system</code> folder inside <code>C:\wamp64\www\</code>.</li>
+<div class="note warning">
+        ⚠️ <strong>Refresh to create database:</strong> If the database is <strong>not</strong> created automatically on the first visit,
+        simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests to initialise all tables.
+        Ensure the <code>config/</code> folder is writable (permissions already set above).
+    </div>
+        <li>Access at <a href="http://localhost/library-system/" target="_blank">http://localhost/library-system/</a></li>
     </ul>
 
-    <h3>3.3 Using Native Apache & PHP (Advanced)</h3>
+
+    <!-- ============================================================ -->
+    <!--  MACOS                                                        -->
+    <!-- ============================================================ -->
+    <h2>3. macOS</h2>
+
+    <h3>3.1 Using MAMP (Recommended)</h3>
+    <ul>
+        <li>Download MAMP from <a href="https://www.mamp.info/" target="_blank">mamp.info</a> (free version).</li>
+        <li>Install and launch MAMP. Set PHP version to 8.x in preferences.</li>
+        <li>Extract <code>Library-Management-System-main.zip</code> → extract <code>library-system.zip</code> → get the <code>library-system</code> folder.</li>
+        <li>Copy <code>library-system</code> to <code>/Applications/MAMP/htdocs/</code>.</li>
+        <li>Set permissions (Terminal):
+            <pre>cd /Applications/MAMP/htdocs
+chmod -R 755 library-system/
+chmod -R 777 library-system/uploads library-system/backups library-system/config</pre>
+        </li>
+        <li><strong>Enable ZipArchive:</strong> Open <code>/Applications/MAMP/bin/php/php8.x/conf/php.ini</code> and uncomment <code>extension=zip</code>.</li><div class="note warning">
+        ⚠️ <strong>Refresh to create database:</strong> If the database is <strong>not</strong> created automatically on the first visit,
+        simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests to initialise all tables.
+        Ensure the <code>config/</code> folder is writable (permissions already set above).
+    </div>
+        <li>Start MAMP servers and access <a href="http://localhost:8888/library-system/" target="_blank">http://localhost:8888/library-system/</a></li>
+    </ul>
+
+    <div class="reset-highlight">
+        <h3>⚙️ <strong>RESET TO DEFAULT</strong> – System Configuration</h3>
+        <p style="font-size: 1.1rem;">
+            After installation, you can restore all system settings to their
+            <strong>factory defaults</strong> with a single click.
+        </p>
+        <p>
+            <span class="badge-reset">📍 Navigation</span>
+            <strong style="font-size: 1.2rem;">
+                Admin Dashboard → System Settings → System Configuration
+            </strong>
+        </p>
+        <p>
+            <span class="badge-reset">🔘 Action</span>
+            Click the <strong style="background: #f39c12; color: #fff; padding: 0.2rem 1rem; border-radius: 30px;">RESET TO DEFAULT</strong>
+            button – all settings will be restored to their original values.
+        </p>
+        <div class="note" style="background: #fff8e1; border-left-color: #f39c12; text-align: left;">
+            💡 This is useful if you have made many changes and want to start fresh,
+            or if you encounter configuration issues.
+        </div>
+    </div>
+
+    <h3>3.2 Using Native Apache &amp; PHP (Advanced)</h3>
     <ul>
         <li>Install Homebrew: <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></li>
         <li>Install PHP 8.3: <code>brew install php@8.3</code></li>
-        <li>Enable ZipArchive: <code>brew install php@8.3 --with-zip</code> or ensure it's enabled in <code>/usr/local/etc/php/8.3/php.ini</code>.</li>
-        <li>Enable Apache module: <code>sudo brew services start php@8.3</code></li>
-        <li>Place <code>library-system</code> folder in <code>/Library/WebServer/Documents/</code>:
-            <pre><code>sudo cp -r library-system /Library/WebServer/Documents/</code></pre>
+        <li>Enable ZipArchive: ensure it's enabled in <code>/usr/local/etc/php/8.3/php.ini</code>.</li>
+        <li>Place <code>library-system</code> in <code>/Library/WebServer/Documents/</code>:
+            <pre>sudo cp -r library-system /Library/WebServer/Documents/</pre>
         </li>
         <li>Set permissions:
-            <pre><code>cd /Library/WebServer/Documents
+            <pre>cd /Library/WebServer/Documents
 sudo chown -R _www:_www library-system/
 sudo chmod -R 755 library-system/
-sudo chmod -R 777 library-system/uploads library-system/backups library-system/config</code></pre>
+sudo chmod -R 777 library-system/uploads library-system/backups library-system/config</pre>
         </li>
-        <li>Edit Apache config (<code>/etc/apache2/httpd.conf</code>) to enable mod_rewrite and allow Override.</li>
+        <li>Edit <code>/etc/apache2/httpd.conf</code> to enable <code>mod_rewrite</code> and set <code>AllowOverride All</code>.</li>
         <li>Restart Apache: <code>sudo apachectl restart</code></li>
-        <li>Access at <code>http://localhost/library-system/</code>.</li>
+        <li>Access at <a href="http://localhost/library-system/" target="_blank">http://localhost/library-system/</a></li>
     </ul>
 
-    <!-- ==================== SECTION 4: UBUNTU ==================== -->
-    <h2>4. Ubuntu Installation</h2>
+<div class="note warning">
+        ⚠️ <strong>Refresh to create database:</strong> If the database is <strong>not</strong> created automatically on the first visit,
+        simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests to initialise all tables.
+        Ensure the <code>config/</code> folder is writable (permissions already set above).
+    </div>
+    <!-- ============================================================ -->
+    <!--  UBUNTU / LINUX (FULL SETUP INCLUDED)                         -->
+    <!-- ============================================================ -->
+    <h2>4. Ubuntu / Linux – Complete Setup</h2>
 
-    <h3>4.1 System Requirements</h3>
-    <table>
-        <tr><th>Component</th><th>Requirement</th></tr>
-        <tr><td>Ubuntu Version</td><td>24.04 LTS (Noble Numbat) – also works on 22.04</td></tr>
-        <tr><td>Web Server</td><td>Apache 2.4</td></tr>
-        <tr><td>PHP</td><td>8.1, 8.2 or <strong>8.3</strong> (recommended)</td></tr>
-        <tr><td>PHP Extensions</td><td>pdo_sqlite, sqlite3, zip, gd, fileinfo, mbstring, curl, json, xml, intl</td></tr>
-    </table>
+    <h3>4.0 Install Apache &amp; PHP 8.3</h3>
+    <div class="terminal">
+        <pre><code><span class="comment"># Update system</span>
+<span class="prompt">$</span> sudo apt update && sudo apt upgrade -y
 
-    <h3>4.2 Step‑by‑Step Installation</h3>
+<span class="comment"># Install Apache, Git, Unzip</span>
+<span class="prompt">$</span> sudo apt install -y apache2 git unzip
 
-    <h4>Update System & Install Apache</h4>
-    <pre><code>sudo apt update && sudo apt upgrade -y
-sudo apt install -y apache2 git unzip
-sudo systemctl enable apache2 && sudo systemctl start apache2</code></pre>
+<span class="comment"># Install PHP 8.3 and required extensions (includes ZipArchive)</span>
+<span class="prompt">$</span> sudo apt install -y php8.3 libapache2-mod-php8.3 php8.3-sqlite3 \
+  php8.3-gd php8.3-zip php8.3-mbstring php8.3-curl php8.3-xml php8.3-intl
 
-    <h4>Install PHP 8.3 & Required Extensions (Including ZipArchive)</h4>
-    <pre><code>sudo apt install -y php8.3 libapache2-mod-php8.3 php8.3-sqlite3 php8.3-gd \
-php8.3-zip php8.3-mbstring php8.3-curl php8.3-xml php8.3-intl</code></pre>
-    <p>Verify PHP version: <code>php -v</code> (should show PHP 8.3.x).</p>
-    <p>Verify ZipArchive is enabled: <code>php -m | grep zip</code> (should return "zip").</p>
+<span class="comment"># Enable Apache mod_rewrite</span>
+<span class="prompt">$</span> sudo a2enmod rewrite
+<span class="prompt">$</span> sudo systemctl restart apache2</code></pre>
+    </div>
 
-    <h4>Deploy the Files (using the manual steps above)</h4>
-    <p>Refer to the <strong>Manual Installation</strong> box at the top of this guide for the clone/download commands.</p>
-    <p>After obtaining the <code>library-system</code> folder, move it to the web root (eg /home):</p>
-    <pre><code>sudo mv library-system /var/www/html/</code></pre>
+    <h3>4.1 Download &amp; Extract the Application</h3>
+    <div class="highlight-box">
+        <p><strong>Step 1 – Download the ZIP to your home directory:</strong></p>
+        <div class="terminal"> <strong>Download the ZIP</strong> from the GitHub repository         (see download box above).
+        </div>
+        <p><strong>Step 2 – Extract the main archive:</strong></p>
+        <div class="terminal">
+            <pre><code><span class="prompt"></span> <p><strong>Extract the main archive</strong> to get <code>   Library-Management-System-main</code>   folder.</p></code></pre>
+        </div>
 
-    <h4>Enable Apache Modules</h4>
-    <pre><code>sudo a2enmod rewrite
-sudo systemctl restart apache2</code></pre>
+        <p><strong>Step 3 – Extract the application archive:</strong></p>
+         <p>Now you have the <code>library-system</code> ZIP folder inside <code>/Library-Management-System-main/</code>. </p>
+        <div class="terminal"> <pre><code>extract the    <span class="prompt">library-system.zip</code>         Place in home directory</pre>
+        </div>
+       
+        <p><strong>Step 4 – Copy the application folder to the web root: </strong>(Example- /home)</p> Open command Terminal -  <b> Ctrl + Alt + T </b>
+        <div class="terminal"><pre><code><span class="prompt">$ sudo su
+[sudo] password: 
+/home/(folder)# </span> sudo cp -r library-system /var/www/html/</code></pre>
+        </div> <b> Check and Verify the Directory   =>    /var/www/html/library-system </b>
+        <div class="note">
+            💡 If you prefer to move (instead of copy), use <code>sudo mv</code> instead of <code>cp -r</code>.
+            The <code>library-system</code> folder is now located at <code>/var/www/html/library-system</code>.
+        </div>
+    </div>
 
-    <h4>Set Correct Permissions</h4>
-    <pre><code>cd /var/www/html
-sudo chown -R www-data:www-data /var/www/html/library-system/
-sudo chmod -R 755 /var/www/html/library-system/
-sudo chmod -R 777 /var/www/html/library-system/uploads/           # If fail repeat after installtion
-sudo chmod -R 777 /var/www/html/library-system/backups/           # If fail repeat after installtion
-sudo chmod -R 777 /var/www/html/library-system/config/            # Important for SQLite DB creation</code></pre>
+    <h3>4.2 Set Correct Permissions</h3>
+    <div class="terminal">
+        <pre><code><span class="prompt">$</span> cd /var/www/html
+<span class="prompt">$</span> sudo chown -R www-data:www-data /var/www/html/library-system/
+<span class="prompt">$</span> sudo chmod -R 755 /var/www/html/library-system/
+<span class="prompt">$</span> sudo chmod -R 777 /var/www/html/library-system/uploads/           <span class="comment"># If fail, repeat after installation</span>
+<span class="prompt">$</span> sudo chmod -R 777 /var/www/html/library-system/backups/           <span class="comment"># If fail, repeat after installation</span>
+<span class="prompt">$</span> sudo chmod -R 777 /var/www/html/library-system/config/            <span class="comment"># Important for SQLite DB creation</span></code></pre>
+    </div>
 
-
-    <h4>Configure Virtual Host (Recommended)</h4>
-    <pre><code>sudo gedit /etc/apache2/sites-available/library.conf</code></pre>
+    <h3>4.3 Configure Virtual Host (Recommended)</h3>
+    <div class="terminal">
+        <pre><code><span class="comment"># Create a new virtual host configuration</span>
+<span class="prompt">$</span> sudo gedit /etc/apache2/sites-available/library.conf</code></pre>
+    </div>
     <p>Paste the following:</p>
-    <pre><code>&lt;VirtualHost *:80&gt;
+    <pre>&lt;VirtualHost *:80&gt;
     ServerName library.local
     DocumentRoot /var/www/html/library-system
     &lt;Directory /var/www/html/library-system&gt;
@@ -561,209 +625,316 @@ sudo chmod -R 777 /var/www/html/library-system/config/            # Important fo
     &lt;/Directory&gt;
     ErrorLog ${APACHE_LOG_DIR}/library-error.log
     CustomLog ${APACHE_LOG_DIR}/library-access.log combined
-&lt;/VirtualHost&gt;</code></pre>
-    <pre><code>sudo a2ensite library.conf
-sudo a2dissite 000-default.conf
-sudo systemctl reload apache2
+&lt;/VirtualHost&gt;</pre>
+    <div class="terminal">
+        <pre><code><span class="comment"># Enable the site and reload Apache</span>
+<span class="prompt">$</span> sudo a2ensite library.conf
+<span class="prompt">$</span> sudo a2dissite 000-default.conf
+<span class="prompt">$</span> sudo systemctl reload apache2
 
-# Add to /etc/hosts
-echo "127.0.0.1 library.local" | sudo tee -a /etc/hosts</code></pre>
-
-    <h3>Access the System- (Refresh or Restart)</h3> 
-    <pre><code>http://library.local/              # Main system
-http://library.local/opac          # OPAC
-http://library.local/visitor       # Visitor Log</code></pre>
-    <p><strong>Default:</strong> admin / admin123</p>
-
-    <!-- ==================== SECTION 5: CENTOS/RHEL/FEDORA ==================== -->
-    <h2>5. CentOS/RHEL/Fedora Installation</h2>
-
-    <h3>5.1 Download & Deploy</h3>
-    <p>Use the <strong>Manual Installation</strong> commands at the top of this guide to clone or download the repository, then move the <code>library-system</code> folder to <code>/var/www/html/</code>.</p>
-
-    <h3>5.2 Install Dependencies</h3>
-    <pre><code># Install EPEL and Remi repositories
-sudo dnf install epel-release
-sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
-sudo dnf module reset php
-sudo dnf module install php:remi-8.3
-
-# Install Apache and PHP extensions (including zip)
-sudo dnf install httpd php php-sqlite3 php-gd php-zip php-mbstring php-curl php-xml php-intl git unzip
-
-# Enable and start Apache
-sudo systemctl enable httpd
-sudo systemctl start httpd
-
-# Deploy files (assuming library-system is in current directory)
-sudo cp -r library-system /var/www/html/
-sudo chown -R apache:apache /var/www/html/library-system/
-sudo chmod -R 755 /var/www/html/library-system/
-sudo chmod -R 777 /var/www/html/library-system/{uploads,backups,config}
-
-# Allow .htaccess overrides
-sudo gedit /etc/httpd/conf/httpd.conf   # Set AllowOverride All for document root
-
-sudo systemctl restart httpd</code></pre>
-    <p>Access at <code>http://your-server-ip/library-system/</code>.</p>
-
-    <!-- ==================== SECTION 6: ZIPARCHIVE TROUBLESHOOTING ==================== -->
-    <h2>6. Fix: "ZipArchive not available" Error</h2>
-    <div class="highlight-box">
-        <h3>If you see this error:</h3>
-        <div class="warning" style="border-left-color: #dc3545;">
-            <p><strong>"ZipArchive not available. Backups will be saved as folders. Enable extension=zip in php.ini for compressed backups."</strong></p>
-        </div>
-        
-        <h4>Solution by Platform:</h4>
-        
-        <p><strong>Windows (XAMPP):</strong></p>
-        <pre><code>1. Open C:\xampp\php\php.ini
-2. Find ;extension=zip
-3. Remove semicolon → extension=zip
-4. Save and restart Apache</code></pre>
-
-        <p><strong>Windows (WAMP):</strong></p>
-        <pre><code>1. Click WAMP tray icon → PHP → Extensions
-2. Enable php_zip
-3. Restart WAMP services</code></pre>
-
-        <p><strong>macOS (MAMP):</strong></p>
-        <pre><code>1. Open /Applications/MAMP/bin/php/php8.x/conf/php.ini
-2. Uncomment extension=zip
-3. Restart MAMP servers</code></pre>
-
-        <p><strong>Ubuntu/Debian:</strong></p>
-        <pre><code>sudo apt install php8.3-zip
-sudo systemctl restart apache2</code></pre>
-
-        <p><strong>CentOS/RHEL/Fedora:</strong></p>
-        <pre><code>sudo dnf install php-zip
-sudo systemctl restart httpd</code></pre>
-
-        <div class="note success">
-            ✅ <strong>After fixing:</strong> Go to Admin → System Settings → Backup and try creating a backup. It should now create a <strong>.zip</strong> file instead of a folder.
-        </div>
+<span class="comment"># Add to /etc/hosts for local access</span>
+<span class="prompt">$</span> echo "127.0.0.1 library.local" | sudo tee -a /etc/hosts</code></pre>
     </div>
 
-    <!-- ==================== SECTION 7: FIRST RUN & DATABASE SETUP ==================== -->
-    <h2>7. First Run & Database Setup</h2>
-    <p>The system will <strong>automatically create</strong> the SQLite database and all tables on first access.</p>
-    <div class="note">✅ No manual SQL commands needed.</div>
-    <p><strong>Default admin credentials:</strong></p>
-    <ul>
-        <li>Username: <code>admin</code> &nbsp;|&nbsp; Password: <code>admin123</code></li>
-        <li>Staff test account: <code>staff1</code> / <code>staff123</code></li>
-    </ul>
-    <p>After login, immediately change the admin password via <strong>Admin → System Settings → Change Admin Password</strong>.</p>
+    <!-- ====== REFRESH – repeat three or more times for creating DB ====== -->
+    <div class="highlight-box" style="border-left: 5px solid #e67e22;">
+        <h3>⚠️ REFRESH – repeat three or more times for creating DB</h3>
+   <div class="note warning">
+        ⚠️ <strong>Refresh to create database:</strong> If the database is <strong>not</strong> created automatically on the first visit,
+        simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests to initialise all tables.
+        Ensure the <code>config/</code> folder is writable (permissions already set above).
+    </div>     
 
-    <div class="highlight-box">
-        <h3><b>⚠️ REFRESH – repeat three or more times for creating DB</b></h3>
-        <p>If the database is <strong>not</strong> created automatically on the first visit, simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests to initialise all tables.</p>
-        <p>If the database still doesn't appear, ensure the <code>config/</code> folder is writable (already set in permissions above). Additionally, run these commands to set full permissions on the <code>uploads/</code> and <code>backups/</code> folders:</p>
-        <pre><code>cd /var/www/html
-sudo chmod -R 777 /var/www/html/library-system/uploads/
-sudo chmod -R 777 /var/www/html/library-system/backups/</code></pre>
+        <p>
+            If the database still doesn't appear, ensure the <code>config/</code> folder is writable
+            (already set in permissions above). Additionally, run these commands to set full
+            permissions on the <code>uploads/</code> and <code>backups/</code> folders:
+        </p>
+        <div class="terminal">
+            <pre><code><span class="prompt">$</span> cd /var/www/html
+<span class="prompt">$</span> sudo chmod -R 777 /var/www/html/library-system/uploads/
+<span class="prompt">$</span> sudo chmod -R 777 /var/www/html/library-system/backups/</code></pre>
+        </div>
         <div class="note success">
             ✅ After running the commands, refresh the page again – the database should be created.
         </div>
     </div>
 
-    <!-- ==================== SECTION 8: COMPOSER ==================== -->
-    <h2>8. Optional: Composer for Excel/PDF</h2>
-    <pre><code>cd /var/www/html/library-system
-sudo apt install -y composer
-composer require phpoffice/phpspreadsheet
-composer require dompdf/dompdf</code></pre>
+    <p><strong>Access the System:</strong></p>
+    <ul>
+        <li><a href="http://library.local/" target="_blank">http://library.local/</a> – Main system</li>
+        <li><a href="http://library.local/opac" target="_blank">http://library.local/opac</a> – OPAC</li>
+        <li><a href="http://library.local/visitor" target="_blank">http://library.local/visitor</a> – Visitor Log</li>
+    </ul>
+    <p><strong>Default login:</strong> <code>admin</code> / <code>admin123</code></p>
 
-    <!-- ==================== SECTION 9: CRON JOBS ==================== -->
-    <h2>9. Cron Jobs (Automated Tasks)</h2>
-    <pre><code>sudo crontab -e</code></pre>
-    <pre><code># Daily tasks (overdue reminders, fines)
+    <div class="reset-highlight">
+        <h3>⚙️ <strong>RESET TO DEFAULT</strong> – System Configuration</h3>
+        <p style="font-size: 1.1rem;">
+            After installation, you can restore all system settings to their
+            <strong>factory defaults</strong> with a single click.
+        </p>
+        <p>
+            <span class="badge-reset">📍 Navigation</span>
+            <strong style="font-size: 1.2rem;">
+                Admin Dashboard → System Settings → System Configuration
+            </strong>
+        </p>
+        <p>
+            <span class="badge-reset">🔘 Action</span>
+            Click the <strong style="background: #f39c12; color: #fff; padding: 0.2rem 1rem; border-radius: 30px;">RESET TO DEFAULT</strong>
+            button – all settings will be restored to their original values.
+        </p>
+        <div class="note" style="background: #fff8e1; border-left-color: #f39c12; text-align: left;">
+            💡 This is useful if you have made many changes and want to start fresh,
+            or if you encounter configuration issues.
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!--  CENTOS / RHEL / FEDORA                                       -->
+    <!-- ============================================================ -->
+    <h2>5. CentOS / RHEL / Fedora</h2>
+    <div class="terminal">
+        <pre><code><span class="comment"># Install EPEL and Remi repositories</span>
+<span class="prompt">$</span> sudo dnf install epel-release
+<span class="prompt">$</span> sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
+<span class="prompt">$</span> sudo dnf module reset php
+<span class="prompt">$</span> sudo dnf module install php:remi-8.3
+
+<span class="comment"># Install Apache and PHP extensions (including zip)</span>
+<span class="prompt">$</span> sudo dnf install httpd php php-sqlite3 php-gd php-zip php-mbstring \
+  php-curl php-xml php-intl git unzip
+
+<span class="comment"># Enable and start Apache</span>
+<span class="prompt">$</span> sudo systemctl enable httpd
+<span class="prompt">$</span> sudo systemctl start httpd
+
+<span class="comment"># Deploy (same extraction steps as Ubuntu, then copy to /var/www/html/)</span>
+<span class="prompt">$</span> sudo cp -r ~/Library-Management-System-main/library-system /var/www/html/
+
+<span class="comment"># Set permissions</span>
+<span class="prompt">$</span> sudo chown -R apache:apache /var/www/html/library-system/
+<span class="prompt">$</span> sudo chmod -R 755 /var/www/html/library-system/
+<span class="prompt">$</span> sudo chmod -R 777 /var/www/html/library-system/{uploads,backups,config}
+
+<span class="comment"># Allow .htaccess overrides</span>
+<span class="prompt">$</span> sudo gedit /etc/httpd/conf/httpd.conf   <span class="comment"># Set AllowOverride All</span>
+
+<span class="comment"># Restart Apache</span>
+<span class="prompt">$</span> sudo systemctl restart httpd</code></pre>
+    </div>
+<div class="note warning">
+        ⚠️ <strong>Refresh to create database:</strong> If the database is <strong>not</strong> created automatically on the first visit,
+        simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests to initialise all tables.
+        Ensure the <code>config/</code> folder is writable (permissions already set above).
+    </div>
+    <p>Access at <code>http://your-server-ip/library-system/</code></p>
+
+    <div class="reset-highlight">
+        <h3>⚙️ <strong>RESET TO DEFAULT</strong> – System Configuration</h3>
+        <p style="font-size: 1.1rem;">
+            After installation, you can restore all system settings to their
+            <strong>factory defaults</strong> with a single click.
+        </p>
+        <p>
+            <span class="badge-reset">📍 Navigation</span>
+            <strong style="font-size: 1.2rem;">
+                Admin Dashboard → System Settings → System Configuration
+            </strong>
+        </p>
+        <p>
+            <span class="badge-reset">🔘 Action</span>
+            Click the <strong style="background: #f39c12; color: #fff; padding: 0.2rem 1rem; border-radius: 30px;">RESET TO DEFAULT</strong>
+            button – all settings will be restored to their original values.
+        </p>
+        <div class="note" style="background: #fff8e1; border-left-color: #f39c12; text-align: left;">
+            💡 This is useful if you have made many changes and want to start fresh,
+            or if you encounter configuration issues.
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!--  POST-INSTALLATION TUNING (ADVANCED)                          -->
+    <!-- ============================================================ -->
+    <h2>6. Performance &amp; Error‑Free Configuration</h2>
+
+    <h3>6.1 PHP Settings (Recommended)</h3>
+    <p>Edit your <code>php.ini</code> file to match these values for optimal performance:</p>
+    <pre>memory_limit = 512M
+upload_max_filesize = 100M
+post_max_size = 100M
+max_execution_time = 600
+max_input_time = 600
+date.timezone = Asia/Kolkata   <span class="comment"># adjust to your region</span>
+
+<span class="comment"># Enable OPCache for faster execution</span>
+opcache.enable = 1
+opcache.memory_consumption = 128
+opcache.max_accelerated_files = 10000
+opcache.revalidate_freq = 0       <span class="comment"># disable for development, set 60 in production</span>
+
+<span class="comment"># Enable error logging (useful for debugging)</span>
+error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
+display_errors = Off
+log_errors = On
+error_log = /var/log/php_errors.log</pre>
+    <p>After changes, restart your web server.</p>
+
+    <h3>6.2 Enable SQLite WAL Mode (Already Set)</h3>
+    <p>The system automatically enables <code>PRAGMA journal_mode=WAL</code> for better concurrency and performance – no action required.</p>
+
+    <h3>6.3 Configure .htaccess for Security</h3>
+    <p>Ensure the following <code>.htaccess</code> file is present in the root of your <code>library-system</code> folder to block direct access to sensitive directories:</p>
+    <pre>&lt;IfModule mod_rewrite.c&gt;
+    RewriteEngine On
+
+    # Block access to config, backups, vendor, etc.
+    RewriteRule ^(config|backups|vendor|logs|temp|cache)/ - [F,L]
+
+    # Prevent directory listing
+    Options -Indexes
+
+    # Redirect to index.php for clean URLs (if needed)
+    # RewriteCond %{REQUEST_FILENAME} !-f
+    # RewriteCond %{REQUEST_FILENAME} !-d
+    # RewriteRule ^(.*)$ index.php [QSA,L]
+&lt;/IfModule&gt;</pre>
+
+    <!-- ============================================================ -->
+    <!--  OPTIONAL – COMPOSER                                          -->
+    <!-- ============================================================ -->
+    <h2>7. Optional – Composer for Excel &amp; PDF Reports</h2>
+    <p>If you need advanced reporting (Excel, PDF), install Composer and the required packages:</p>
+    <div class="terminal">
+        <pre><code><span class="prompt">$</span> cd /var/www/html/library-system
+<span class="prompt">$</span> sudo apt install -y composer   <span class="comment"># or brew install composer on macOS</span>
+<span class="prompt">$</span> composer require phpoffice/phpspreadsheet
+<span class="prompt">$</span> composer require dompdf/dompdf</code></pre>
+    </div>
+    <div class="note">
+        If Composer is not available, the system falls back to HTML/print‑based PDFs.
+    </div>
+
+    <!-- ============================================================ -->
+    <!--  CRON JOBS (AUTOMATION)                                       -->
+    <!-- ============================================================ -->
+    <h2>8. Scheduled Tasks (Cron)</h2>
+    <p>Set up these cron jobs to automate overdue notifications, email processing, and backup rotation:</p>
+    <div class="terminal">
+        <pre><code><span class="prompt">$</span> sudo crontab -e</code></pre>
+    </div>
+    <pre># Daily tasks (overdue reminders, fine calculation)
 0 2 * * * /usr/bin/php /var/www/html/library-system/cron/daily_tasks.php >> /var/log/library-cron.log 2>&1
 
 # Process email queue every 5 minutes
 */5 * * * * /usr/bin/php /var/www/html/library-system/cron/process_email_queue.php >> /var/log/library-email.log 2>&1
 
-# Weekly backup rotation
-0 3 * * 1 /usr/bin/php /var/www/html/library-system/cron/weekly_tasks.php >> /var/log/library-cron.log 2>&1</code></pre>
-
-    <!-- ==================== SECTION 10: PHP TUNING ==================== -->
-    <h2>10. PHP Tuning (for large uploads)</h2>
-    <pre><code>sudo gedit /etc/php/8.3/apache2/php.ini</code></pre>
-    <pre><code>upload_max_filesize = 100M
-post_max_size = 100M
-max_execution_time = 600
-memory_limit = 512M</code></pre>
-    <p>Restart Apache: <code>sudo systemctl restart apache2</code></p>
-
-    <!-- ==================== SECTION 11: SECURITY ==================== -->
-    <h2>11. Security Recommendations</h2>
-    <ul>
-        <li><strong>Change all default passwords</strong> (admin, staff1).</li>
-        <li><strong>Enable HTTPS</strong> with Let's Encrypt: <code>sudo certbot --apache -d yourdomain.com</code></li>
-        <li>Ensure <code>.htaccess</code> files are active (block config/, backups/, vendor/).</li>
-        <li>Regularly update system: <code>sudo apt update &amp;&amp; sudo apt upgrade -y</code></li>
-        <li><strong>Keep your GitHub repository updated</strong> - regularly pull the latest changes</li>
-    </ul>
-
-    <!-- ==================== SECTION 12: TROUBLESHOOTING ==================== -->
-    <h2>12. Troubleshooting Quick Reference</h2>
-    <table>
-        <tr><th>Issue</th><th>Solution</th></tr>
-        <tr><td>ZipArchive not available</td><td>Enable <code>extension=zip</code> in php.ini and restart web server (see Section 6).</td></tr>
-        <tr><td>White screen / 500 error</td><td>Check Apache error logs: <code>sudo tail -f /var/log/apache2/error.log</code>. Verify PHP extensions.</td></tr>
-        <tr><td>Database not created</td><td>Refresh page 3–4 times; if still fails, run the permission commands in Section 7.</td></tr>
-        <tr><td>Upload fails</td><td>Check <code>uploads/</code> permissions and PHP <code>upload_max_filesize</code>.</td></tr>
-        <tr><td>Email not sending</td><td>Test SMTP in Settings → Notifications. Check queue with <code>php cron/process_email_queue.php</code>.</td></tr>
-        <tr><td>PDF export blank</td><td>Install dompdf: <code>composer require dompdf/dompdf</code> or use browser print.</td></tr>
-    </table>
-
-    <!-- ==================== SECTION 13: UNINSTALL ==================== -->
-    <h2>13. Uninstall</h2>
-    <pre><code>sudo a2dissite library.conf
-sudo rm -rf /var/www/html/library-system
-sudo systemctl reload apache2</code></pre>
-
-    <!-- ==================== SECTION 14: BACKUP ==================== -->
-    <h2>14. Backup System</h2>
-    <p>Once ZipArchive is enabled, the system can create compressed backups:</p>
-    <ul>
-        <li>Go to <strong>Admin → System Settings → Backup</strong></li>
-        <li>Click <strong>"Create Backup"</strong></li>
-        <li>Backups will be saved as <code>.zip</code> files in the <code>backups/</code> folder</li>
-        <li>You can download or restore from existing backups</li>
-    </ul>
-    <div class="note">💡 The backup includes: SQLite database, all uploaded files (book covers, eBooks), and system configuration.</div>
-
-    <!-- ==================== SECTION 15: UPDATING FROM GITHUB ==================== -->
-    <h2>15. Updating from GitHub</h2>
-    <div class="highlight-box">
-        <p><strong>To update your installation to the latest version:</strong></p>
-        <pre><code>cd /var/www/html/library-system
-
-# If using Git:
-git pull origin main
-
-# If using ZIP download:
-wget https://github.com/sameemonm1-hue/library-system/archive/main.zip
-unzip -o main.zip
-cp -r library-system-main/library-system/* ./
-rm -rf library-system-main main.zip
-
-# After update, clear cache if needed
-# Check for any new configuration requirements</code></pre>
-        <div class="note warning">
-            ⚠️ <strong>Always backup your database and files before updating!</strong> Use the built-in backup feature (Section 14) before pulling updates.
-        </div>
+# Weekly backup rotation (keeps last 10 backups)
+0 3 * * 1 /usr/bin/php /var/www/html/library-system/cron/weekly_tasks.php >> /var/log/library-cron.log 2>&1</pre>
+    <div class="note">
+        Adjust paths if your installation is in a different directory.
     </div>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- ============================================================ -->
+    <!--  SECURITY HARDENING                                           -->
+    <!-- ============================================================ -->
+    <h2>9. Security Hardening</h2>
+    <ul>
+        <li><strong>Change default passwords</strong> immediately after login (admin, staff1).</li>
+        <li><strong>Enable HTTPS</strong> using Let's Encrypt: <code>sudo certbot --apache -d yourdomain.com</code> (Ubuntu) or equivalent.</li>
+        <li><strong>Restrict access</strong> to <code>config/</code>, <code>backups/</code>, <code>uploads/</code> via <code>.htaccess</code> (included).</li>
+        <li><strong>Enable fail2ban</strong> to block brute‑force attacks on login.</li>
+        <li><strong>Regular updates</strong>: <code>sudo apt update &amp;&amp; sudo apt upgrade -y</code>.</li>
+        <li><strong>Pull latest code</strong> from GitHub periodically.</li>
+    </ul>
+
+    <!-- ============================================================ -->
+    <!--  BACKUP & RESTORE                                             -->
+    <!-- ============================================================ -->
+    <h2>10. Backup &amp; Restore</h2>
+    <h3>10.1 Create a Backup</h3>
+    <ul>
+        <li>Log in as admin → <strong>System Settings → Backup</strong>.</li>
+        <li>Click <strong>"Create Backup"</strong> – a <code>.zip</code> file will be saved in the <code>backups/</code> folder.</li>
+        <li>Backups include the SQLite database and all uploaded files (covers, eBooks).</li>
+    </ul>
+
+    <h3>10.2 Restore from a Backup</h3>
+    <ul>
+        <li>In the same Backup section, select a previous backup and click <strong>"Restore"</strong>.</li>
+        <li>The system will replace the current database and files with the backup version.</li>
+    </ul>
+    <div class="note warning">
+        ⚠️ <strong>Always create a fresh backup before performing a restore or update.</strong>
+    </div>
+
+    <!-- ============================================================ -->
+    <!--  TROUBLESHOOTING QUICK REFERENCE                              -->
+    <!-- ============================================================ -->
+    <h2>11. Troubleshooting Quick Reference</h2>
+    <table>
+        <tr><th>Issue</th><th>Solution</th></tr>
+        <tr>
+            <td><strong>ZipArchive not available</strong></td>
+            <td>Enable <code>extension=zip</code> in php.ini and restart the web server.</td>
+        </tr>
+        <tr>
+            <td><strong>White screen / 500 error</strong></td>
+            <td>Check Apache error logs: <code>sudo tail -f /var/log/apache2/error.log</code>. Verify all PHP extensions are installed.</td>
+        </tr>
+        <tr>
+            <td><strong>Database not created</strong></td>
+            <td>Refresh the page 3–4 times; if still fails, ensure <code>config/</code> is writable (run permission commands again).</td>
+        </tr>
+        <tr>
+            <td><strong>Upload fails</strong></td>
+            <td>Check <code>uploads/</code> permissions and PHP <code>upload_max_filesize</code>.</td>
+        </tr>
+        <tr>
+            <td><strong>Email not sending</strong></td>
+            <td>Test SMTP in Settings → Notifications. Check the queue with <code>php cron/process_email_queue.php</code>.</td>
+        </tr>
+        <tr>
+            <td><strong>PDF export blank</strong></td>
+            <td>Install dompdf via Composer, or use the browser's print function as fallback.</td>
+        </tr>
+        <tr>
+            <td><strong>Slow performance</strong></td>
+            <td>Enable OPCache, increase memory limit, and ensure SQLite WAL mode is active (it is by default).</td>
+        </tr>
+    </table>
+
+    <!-- ============================================================ -->
+    <!--  UNINSTALL (CLEAN REMOVAL)                                    -->
+    <!-- ============================================================ -->
+    <h2>12. Uninstall</h2>
+    <div class="terminal">
+        <pre><code><span class="comment"># For Apache</span>
+<span class="prompt">$</span> sudo a2dissite library.conf   <span class="comment"># if you set up a virtual host</span>
+<span class="prompt">$</span> sudo rm -rf /var/www/html/library-system
+<span class="prompt">$</span> sudo systemctl reload apache2</code></pre>
+    </div>
+    <p>On Windows, simply delete the <code>library-system</code> folder from <code>htdocs</code>.</p>
+
+    <!-- ============================================================ -->
+    <!--  FOOTER                                                       -->
+    <!-- ============================================================ -->
+    <hr />
     <footer>
-        <p>📖 Library ERP – Installation & Migration Guide v2.0<br>
-        <strong>Download:</strong> <a href="https://github.com/sameemonm1-hue/library-system" target="_blank">https://github.com/sameemonm1-hue/library-system</a><br>
-        For support: +91 9446996482 / +974 30792144 / Email: sameemonm1@gmail.com</p>
+        <p>
+            <strong>📖 Library ERP – Complete Installation &amp; Deployment Guide v4.0</strong><br />
+            <strong>Download:</strong>
+            <a href="https://github.com/sameemonm1-hue/Library-Management-System" target="_blank">
+                github.com/sameemonm1-hue/Library-Management-System
+            </a><br />
+            📞 Support: +91 9446996482 / +974 30792144 &bull;
+            ✉️ <a href="mailto:sameemonm1@gmail.com">sameemonm1@gmail.com</a>
+        </p>
     </footer>
+
 </div>
+<!-- /container -->
+
 </body>
 </html>
