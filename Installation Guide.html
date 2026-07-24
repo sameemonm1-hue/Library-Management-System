@@ -429,12 +429,6 @@ extension=intl</pre>
 icacls "C:\xampp\htdocs\library-system\backups" /grant Everyone:F /T
 icacls "C:\xampp\htdocs\library-system\config" /grant Everyone:F /T</pre>
 
-<div class="note warning">
-        ⚠️ <strong>Refresh to create database:</strong> If the database is <strong>not</strong> created automatically on the first visit,
-        simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests to initialise all tables.
-        Ensure the <code>config/</code> folder is writable (permissions already set above).
-    </div>
-
     <h3>2.5 Access the System</h3>
     <p>Open browser: <a href="http://localhost/library-system/" target="_blank">http://localhost/library-system/</a></p>
     <ul>
@@ -471,14 +465,8 @@ icacls "C:\xampp\htdocs\library-system\config" /grant Everyone:F /T</pre>
         <li>Install WAMP from <a href="https://www.wampserver.com/" target="_blank">wampserver.com</a>.</li>
         <li>Enable PHP extensions via the WAMP tray icon → PHP → Extensions (enable <strong>php_zip</strong>).</li>
         <li>Place the <code>library-system</code> folder inside <code>C:\wamp64\www\</code>.</li>
-<div class="note warning">
-        ⚠️ <strong>Refresh to create database:</strong> If the database is <strong>not</strong> created automatically on the first visit,
-        simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests to initialise all tables.
-        Ensure the <code>config/</code> folder is writable (permissions already set above).
-    </div>
         <li>Access at <a href="http://localhost/library-system/" target="_blank">http://localhost/library-system/</a></li>
     </ul>
-
 
     <!-- ============================================================ -->
     <!--  MACOS                                                        -->
@@ -496,11 +484,7 @@ icacls "C:\xampp\htdocs\library-system\config" /grant Everyone:F /T</pre>
 chmod -R 755 library-system/
 chmod -R 777 library-system/uploads library-system/backups library-system/config</pre>
         </li>
-        <li><strong>Enable ZipArchive:</strong> Open <code>/Applications/MAMP/bin/php/php8.x/conf/php.ini</code> and uncomment <code>extension=zip</code>.</li><div class="note warning">
-        ⚠️ <strong>Refresh to create database:</strong> If the database is <strong>not</strong> created automatically on the first visit,
-        simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests to initialise all tables.
-        Ensure the <code>config/</code> folder is writable (permissions already set above).
-    </div>
+        <li><strong>Enable ZipArchive:</strong> Open <code>/Applications/MAMP/bin/php/php8.x/conf/php.ini</code> and uncomment <code>extension=zip</code>.</li>
         <li>Start MAMP servers and access <a href="http://localhost:8888/library-system/" target="_blank">http://localhost:8888/library-system/</a></li>
     </ul>
 
@@ -546,11 +530,6 @@ sudo chmod -R 777 library-system/uploads library-system/backups library-system/c
         <li>Access at <a href="http://localhost/library-system/" target="_blank">http://localhost/library-system/</a></li>
     </ul>
 
-<div class="note warning">
-        ⚠️ <strong>Refresh to create database:</strong> If the database is <strong>not</strong> created automatically on the first visit,
-        simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests to initialise all tables.
-        Ensure the <code>config/</code> folder is writable (permissions already set above).
-    </div>
     <!-- ============================================================ -->
     <!--  UBUNTU / LINUX (FULL SETUP INCLUDED)                         -->
     <!-- ============================================================ -->
@@ -576,23 +555,28 @@ sudo chmod -R 777 library-system/uploads library-system/backups library-system/c
     <h3>4.1 Download &amp; Extract the Application</h3>
     <div class="highlight-box">
         <p><strong>Step 1 – Download the ZIP to your home directory:</strong></p>
-        <div class="terminal"> <strong>Download the ZIP</strong> from the GitHub repository         (see download box above).
-        </div>
-        <p><strong>Step 2 – Extract the main archive:</strong></p>
         <div class="terminal">
-            <pre><code><span class="prompt"></span> <p><strong>Extract the main archive</strong> to get <code>   Library-Management-System-main</code>   folder.</p></code></pre>
+            <pre><code><span class="prompt">$</span> cd ~
+<span class="prompt">$</span> wget https://github.com/sameemonm1-hue/Library-Management-System/archive/main.zip</code></pre>
         </div>
 
-        <p><strong>Step 3 – Extract the application archive:</strong></p>
-         <p>Now you have the <code>library-system</code> ZIP folder inside <code>/Library-Management-System-main/</code>. </p>
-        <div class="terminal"> <pre><code>extract the    <span class="prompt">library-system.zip</code>         Place in home directory</pre>
+        <p><strong>Step 2 – Extract the main archive:</strong></p>
+        <div class="terminal">
+            <pre><code><span class="prompt">$</span> unzip main.zip</code></pre>
         </div>
-       
-        <p><strong>Step 4 – Copy the application folder to the web root: </strong>(Example- /home)</p> Open command Terminal -  <b> Ctrl + Alt + T </b>
-        <div class="terminal"><pre><code><span class="prompt">$ sudo su
-[sudo] password: 
-/home/(folder)# </span> sudo cp -r library-system /var/www/html/</code></pre>
-        </div> <b> Check and Verify the Directory   =>    /var/www/html/library-system </b>
+        <p>This creates the folder <code>Library-Management-System-main</code> in your home directory.</p>
+
+        <p><strong>Step 3 – Extract the application archive:</strong></p>
+        <div class="terminal">
+            <pre><code><span class="prompt">$</span> cd Library-Management-System-main
+<span class="prompt">$</span> unzip library-system.zip</code></pre>
+        </div>
+        <p>Now you have the <code>library-system</code> folder inside <code>~/Library-Management-System-main/</code>.</p>
+
+        <p><strong>Step 4 – Copy the application folder to the web root:</strong></p>
+        <div class="terminal">
+            <pre><code><span class="prompt">$</span> sudo cp -r ~/Library-Management-System-main/library-system /var/www/html/</code></pre>
+        </div>
         <div class="note">
             💡 If you prefer to move (instead of copy), use <code>sudo mv</code> instead of <code>cp -r</code>.
             The <code>library-system</code> folder is now located at <code>/var/www/html/library-system</code>.
@@ -639,12 +623,11 @@ sudo chmod -R 777 library-system/uploads library-system/backups library-system/c
     <!-- ====== REFRESH – repeat three or more times for creating DB ====== -->
     <div class="highlight-box" style="border-left: 5px solid #e67e22;">
         <h3>⚠️ REFRESH – repeat three or more times for creating DB</h3>
-   <div class="note warning">
-        ⚠️ <strong>Refresh to create database:</strong> If the database is <strong>not</strong> created automatically on the first visit,
-        simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests to initialise all tables.
-        Ensure the <code>config/</code> folder is writable (permissions already set above).
-    </div>     
-
+        <p>
+            If the database is <strong>not</strong> created automatically on the first visit,
+            simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests
+            to initialise all tables.
+        </p>
         <p>
             If the database still doesn't appear, ensure the <code>config/</code> folder is writable
             (already set in permissions above). Additionally, run these commands to set full
@@ -723,11 +706,6 @@ sudo chmod -R 777 library-system/uploads library-system/backups library-system/c
 
 <span class="comment"># Restart Apache</span>
 <span class="prompt">$</span> sudo systemctl restart httpd</code></pre>
-    </div>
-<div class="note warning">
-        ⚠️ <strong>Refresh to create database:</strong> If the database is <strong>not</strong> created automatically on the first visit,
-        simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests to initialise all tables.
-        Ensure the <code>config/</code> folder is writable (permissions already set above).
     </div>
     <p>Access at <code>http://your-server-ip/library-system/</code></p>
 
