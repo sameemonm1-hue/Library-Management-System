@@ -13,136 +13,222 @@
         }
         body {
             background: #f0f4f9;
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
             color: #1e2f3e;
-            padding: 2rem 1rem;
+            padding: 1.5rem 1rem;
+            font-size: 15px;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             background: #ffffff;
-            border-radius: 28px;
+            border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            padding: 2rem 2rem 2.5rem;
+            padding: 2rem 2.2rem 2.5rem;
         }
 
         /* ── TYPOGRAPHY ── */
         h1 {
-            font-size: 2.2rem;
+            font-size: 1.9rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: #0a3a4f;
             border-left: 6px solid #1e6f9f;
             padding-left: 1.2rem;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.3;
         }
         h2 {
-            font-size: 1.7rem;
-            margin: 2rem 0 0.8rem 0;
+            font-size: 1.5rem;
+            margin: 1.8rem 0 0.7rem 0;
             color: #1a4f6e;
             border-bottom: 3px solid #dce7f0;
             padding-bottom: 0.4rem;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.3;
         }
         h3 {
-            font-size: 1.3rem;
-            margin: 1.4rem 0 0.6rem;
+            font-size: 1.2rem;
+            margin: 1.3rem 0 0.5rem;
             color: #2c5a7a;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.3;
         }
         h4 {
-            font-size: 1.1rem;
-            margin: 1rem 0 0.4rem;
+            font-size: 1.05rem;
+            margin: 0.9rem 0 0.4rem;
             color: #2c6e9e;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.3;
         }
         p {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
+            font-size: 15px;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
         }
         ul,
         ol {
-            margin: 0.5rem 0 1rem 1.8rem;
+            margin: 0.4rem 0 0.8rem 1.8rem;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
         }
         li {
             margin: 0.25rem 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
         }
         a {
             color: #1e6f9f;
             text-decoration: none;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 500;
         }
         a:hover {
             text-decoration: underline;
         }
+        strong {
+            font-weight: 700;
+            color: #1a3a4f;
+        }
 
         /* ── CODE & TERMINAL ── */
-        code,
-        pre {
-            background: #f0f4f8;
-            border-radius: 10px;
-            font-family: 'Courier New', 'Fira Code', monospace;
-            font-size: 0.9rem;
-        }
         code {
-            padding: 0.2rem 0.5rem;
+            padding: 0.15rem 0.5rem;
             background: #e9ecef;
-            border-radius: 5px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            color: #1a3a4f;
+            font-weight: 600;
         }
         pre {
-            padding: 1rem 1.2rem;
+            padding: 0.9rem 1.2rem;
             overflow-x: auto;
             white-space: pre-wrap;
             word-break: break-word;
-            margin: 1rem 0;
+            margin: 0.8rem 0;
             border-left: 4px solid #1e6f9f;
             background: #f8fafc;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            border-radius: 8px;
+            line-height: 1.6;
         }
+
+        /* ── IMPROVED TERMINAL WITH DARK RED ACCENTS ── */
         .terminal {
-            background: #1e2f3e;
-            color: #e9ecef;
-            padding: 1.2rem 1.5rem;
-            border-radius: 12px;
-            margin: 1rem 0;
+            background: #0a0f1a;
+            color: #e8edf2;
+            padding: 1rem 1.3rem;
+            border-radius: 10px;
+            margin: 0.8rem 0;
             overflow-x: auto;
-            border-left: 4px solid #ffd700;
+            border-left: 4px solid #cc0000;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.7;
+            box-shadow: 0 4px 20px rgba(204, 0, 0, 0.25);
         }
         .terminal code,
         .terminal pre {
             background: transparent;
-            color: #e9ecef;
+            color: #e8edf2;
             padding: 0;
             border: none;
-            font-size: 0.95rem;
+            font-size: 14px;
+            font-family: 'Consolas', 'Courier New', monospace;
         }
         .terminal .comment {
-            color: #8ab4c8;
+            color: #6a9955;
+            font-weight: 400;
+            font-style: italic;
         }
         .terminal .prompt {
-            color: #7eca9c;
+            color: #4ec9b0;
+            font-weight: 700;
+        }
+        .terminal .user {
+            color: #ff6b6b;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+        }
+        .terminal .cmd {
+            color: #ff6b6b;
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(255, 107, 107, 0.2);
+        }
+        .terminal .cmd-highlight {
+            color: #ff3333;
+            font-weight: 800;
+            text-shadow: 0 0 15px rgba(255, 51, 51, 0.4);
+            background: rgba(255, 51, 51, 0.12);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+        }
+        .terminal .path {
+            color: #9cdcfe;
+            font-weight: 400;
+        }
+        .terminal .output {
+            color: #ce9178;
+        }
+        .terminal .error {
+            color: #ff3333;
+            font-weight: 700;
+            text-shadow: 0 0 12px rgba(255, 51, 51, 0.3);
+        }
+        .terminal .success-out {
+            color: #4ec9b0;
+            font-weight: 600;
+        }
+        .terminal .warning-out {
+            color: #ffd700;
+            font-weight: 600;
+        }
+        .terminal .info-out {
+            color: #9cdcfe;
+            font-weight: 400;
         }
 
         /* ── TABLES ── */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1.2rem 0;
-            font-size: 0.95rem;
+            margin: 1rem 0;
+            font-size: 14px;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         }
         th,
         td {
             border: 1px solid #cbd5e1;
-            padding: 0.6rem 0.8rem;
+            padding: 0.5rem 0.8rem;
             text-align: left;
             vertical-align: top;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
         }
         th {
             background: #e9f0f5;
-            font-weight: 600;
+            font-weight: 700;
+            color: #1a3a4f;
         }
 
         /* ── NOTE BOXES ── */
         .note {
             background: #eef4ff;
-            padding: 0.8rem 1.2rem;
+            padding: 0.7rem 1.2rem;
             border-left: 5px solid #1e6f9f;
-            border-radius: 12px;
-            margin: 1rem 0;
+            border-radius: 10px;
+            margin: 0.8rem 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
         }
         .note.warning {
             background: #fff3e0;
@@ -161,9 +247,35 @@
         .highlight-box {
             background: #f8f9fa;
             border: 1px solid #dee2e6;
-            border-radius: 12px;
-            padding: 1.2rem 1.5rem;
+            border-radius: 10px;
+            padding: 1rem 1.3rem;
+            margin: 0.8rem 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .step-box {
+            background: #f8fafc;
+            border: 2px solid #dce7f0;
+            border-radius: 10px;
+            padding: 1rem 1.3rem;
             margin: 1rem 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .step-box h4 {
+            margin-top: 0;
+            color: #1a4f6e;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.05rem;
+        }
+        .step-box p,
+        .step-box ul,
+        .step-box li {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
         /* ── DOWNLOAD BOX ── */
@@ -171,8 +283,8 @@
             background: linear-gradient(135deg, #1a4f6e 0%, #1e6f9f 100%);
             color: #fff;
             padding: 1.8rem 2rem;
-            border-radius: 16px;
-            margin: 1.5rem 0;
+            border-radius: 14px;
+            margin: 1.2rem 0;
             text-align: center;
             box-shadow: 0 8px 25px rgba(30, 111, 159, 0.3);
         }
@@ -180,26 +292,30 @@
             color: #fff;
             border-bottom: none;
             margin-top: 0;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         }
         .download-box p {
-            font-size: 1.05rem;
-            margin-bottom: 1rem;
+            font-size: 15px;
+            margin-bottom: 0.8rem;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #fff;
         }
         .download-btn {
             display: inline-block;
             background: #ffd700;
             color: #1a4f6e;
-            padding: 0.9rem 2.8rem;
+            padding: 0.8rem 2.8rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         }
         .download-btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
             background: #ffed4a;
             text-decoration: none;
@@ -207,105 +323,483 @@
         .github-link {
             color: #ffd700;
             font-weight: 700;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 15px;
         }
         .github-link:hover {
             color: #ffed4a;
             text-decoration: underline;
         }
 
+        /* ── HIGHLIGHTED LINK STYLES ── */
+        .highlight-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+            color: #1a4f6e;
+            padding: 0.25rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        .highlight-link:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
+            text-decoration: none;
+        }
+
+        .highlight-github {
+            display: inline-block;
+            background: linear-gradient(135deg, #2ea44f 0%, #3fb950 100%);
+            color: #ffffff;
+            padding: 0.25rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 2px 10px rgba(46, 164, 79, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        .highlight-github:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 20px rgba(46, 164, 79, 0.5);
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .highlight-apache {
+            display: inline-block;
+            background: linear-gradient(135deg, #dc3545 0%, #e74c5e 100%);
+            color: #ffffff;
+            padding: 0.25rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 2px 10px rgba(220, 53, 69, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        .highlight-apache:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 20px rgba(220, 53, 69, 0.5);
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .highlight-mamp {
+            display: inline-block;
+            background: linear-gradient(135deg, #6f42c1 0%, #8b5cf6 100%);
+            color: #ffffff;
+            padding: 0.25rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 2px 10px rgba(111, 66, 193, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        .highlight-mamp:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 20px rgba(111, 66, 193, 0.5);
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        /* ── MANUAL INSTALL BOX ── */
+        .manual-install-box {
+            background: #e8f0fe;
+            border: 3px solid #1a4f6e;
+            border-radius: 14px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        .manual-install-box h3 {
+            margin-top: 0;
+            color: #0a3a4f;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        .manual-install-box h3::before {
+            content: "📋";
+            font-size: 1.8rem;
+        }
+        .manual-install-box p,
+        .manual-install-box ul,
+        .manual-install-box li {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
         /* ── RESET TO DEFAULT HIGHLIGHT ── */
         .reset-highlight {
             background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
             border: 3px solid #f39c12;
-            border-radius: 16px;
-            padding: 1.5rem 2rem;
-            margin: 1.8rem 0;
+            border-radius: 14px;
+            padding: 1.3rem 1.8rem;
+            margin: 1.5rem 0;
             box-shadow: 0 4px 20px rgba(243, 156, 18, 0.25);
             text-align: center;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         }
         .reset-highlight h3 {
             color: #b7950b;
             margin-top: 0;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         }
         .reset-highlight .badge-reset {
             display: inline-block;
             background: #f39c12;
             color: #fff;
             font-weight: 700;
-            padding: 0.3rem 1.2rem;
+            padding: 0.25rem 1.2rem;
             border-radius: 30px;
-            font-size: 1rem;
-            margin: 0.3rem 0;
+            font-size: 14px;
+            margin: 0.2rem 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         }
         .reset-highlight code {
             background: #fff;
-            padding: 0.2rem 0.8rem;
-            border-radius: 6px;
-            font-weight: 600;
+            padding: 0.15rem 0.7rem;
+            border-radius: 5px;
+            font-weight: 700;
             color: #b7950b;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .reset-highlight p {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
         }
 
         /* ── MISC ── */
         .badge {
             background: #1e6f9f;
             color: #fff;
-            font-size: 0.75rem;
-            padding: 0.2rem 0.7rem;
+            font-size: 12px;
+            padding: 0.15rem 0.7rem;
             border-radius: 20px;
             display: inline-block;
-            margin-right: 0.4rem;
+            margin-right: 0.3rem;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         }
         hr {
-            margin: 2rem 0;
+            margin: 1.8rem 0;
             border: none;
             border-top: 2px dotted #cbd5e1;
         }
         footer {
-            margin-top: 2.5rem;
+            margin-top: 2.2rem;
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 13px;
             color: #6c757d;
             border-top: 1px solid #e2e8f0;
-            padding-top: 1.5rem;
+            padding-top: 1.3rem;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+        }
+        footer p {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 13px;
+        }
+        footer a {
+            font-size: 13px;
         }
         .folder-structure {
             background: #f1f5f9;
             border-radius: 8px;
             padding: 0.6rem 1.2rem;
-            font-family: monospace;
-            margin: 0.5rem 0;
+            font-family: 'Consolas', 'Courier New', monospace;
+            margin: 0.4rem 0;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* ── TABLE OF CONTENTS ── */
+        .toc {
+            background: #f8fafc;
+            border: 1px solid #dce7f0;
+            border-radius: 12px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.2rem 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        .toc h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.2rem;
+            color: #1a4f6e;
+            border-bottom: 2px solid #dce7f0;
+            padding-bottom: 0.4rem;
+            margin-top: 0;
+        }
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 0 0;
+            columns: 2;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        .toc ul li {
+            padding: 0.3rem 0;
+            margin: 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .toc ul li a {
+            color: #1a4f6e;
+            text-decoration: none;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .toc ul li a:hover {
+            text-decoration: underline;
+            color: #1e6f9f;
+        }
+
+        /* ── PRINT STYLES (for PDF export) ── */
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0.4in;
+                font-size: 11pt;
+                font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+                color: #000;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0;
+                max-width: 100%;
+            }
+            .download-box,
+            .reset-highlight,
+            .manual-install-box {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 2px solid #1a4f6e;
+            }
+            .download-btn,
+            .highlight-link,
+            .highlight-github,
+            .highlight-apache,
+            .highlight-mamp {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .step-box {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .terminal {
+                background: #0a0f1a !important;
+                color: #e8edf2 !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .terminal code,
+            .terminal pre {
+                color: #e8edf2 !important;
+            }
+            .terminal .cmd {
+                color: #ff6b6b !important;
+            }
+            .terminal .user {
+                color: #ff6b6b !important;
+            }
+            .terminal .cmd-highlight {
+                color: #ff3333 !important;
+            }
+            h1, h2, h3, h4 {
+                page-break-after: avoid;
+            }
+            table {
+                page-break-inside: avoid;
+            }
+            .note, .highlight-box {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .toc ul {
+                columns: 2;
+            }
+            .download-box {
+                background: #1a4f6e !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .download-box h2 {
+                color: #fff !important;
+            }
+            .download-box p {
+                color: #fff !important;
+            }
+            .download-btn {
+                background: #ffd700 !important;
+                color: #1a4f6e !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .reset-highlight {
+                background: #fff3cd !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .manual-install-box {
+                background: #e8f0fe !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .highlight-link {
+                background: #ffd700 !important;
+                color: #1a4f6e !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .highlight-github {
+                background: #2ea44f !important;
+                color: #fff !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .highlight-apache {
+                background: #dc3545 !important;
+                color: #fff !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .highlight-mamp {
+                background: #6f42c1 !important;
+                color: #fff !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .github-link {
+                color: #ffd700 !important;
+            }
+            pre, code {
+                background: #f8fafc !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .badge-reset {
+                background: #f39c12 !important;
+                color: #fff !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .toc {
+                background: #f8fafc !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .step-box {
+                background: #f8fafc !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .highlight-box {
+                background: #f8f9fa !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
         }
 
         /* ── RESPONSIVE ── */
         @media (max-width: 700px) {
             .container {
-                padding: 1.2rem;
+                padding: 1rem;
+            }
+            body {
+                padding: 0.8rem;
+                font-size: 14px;
             }
             h1 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
                 padding-left: 0.8rem;
             }
             h2 {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
+            }
+            h3 {
+                font-size: 1.05rem;
             }
             .download-box {
-                padding: 1.2rem;
-            }
-            .download-btn {
-                padding: 0.7rem 1.8rem;
-                font-size: 1rem;
-            }
-            .reset-highlight {
                 padding: 1rem;
             }
+            .download-btn {
+                padding: 0.6rem 1.8rem;
+                font-size: 0.95rem;
+            }
+            .reset-highlight {
+                padding: 0.8rem 1rem;
+            }
             .reset-highlight h3 {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
             pre,
             .terminal {
-                font-size: 0.8rem;
-                padding: 0.8rem;
+                font-size: 12px;
+                padding: 0.6rem 0.8rem;
+            }
+            .toc ul {
+                columns: 1;
+            }
+            .manual-install-box {
+                padding: 0.8rem 1rem;
+            }
+            .step-box {
+                padding: 0.6rem 0.8rem;
+            }
+            .highlight-link,
+            .highlight-github,
+            .highlight-apache,
+            .highlight-mamp {
+                font-size: 12px;
+                padding: 0.15rem 0.8rem;
+            }
+            table {
+                font-size: 12px;
+            }
+            th, td {
+                font-size: 12px;
+                padding: 0.3rem 0.5rem;
+            }
+            .note {
+                font-size: 13px;
+                padding: 0.5rem 0.8rem;
+            }
+            .toc ul li {
+                font-size: 13px;
+            }
+            .toc ul li a {
+                font-size: 13px;
+            }
+            p, ul, ol, li {
+                font-size: 14px;
+            }
+            code {
+                font-size: 13px;
+            }
+            .step-box p,
+            .step-box ul,
+            .step-box li {
+                font-size: 13px;
             }
         }
     </style>
@@ -318,7 +812,7 @@
     <!--  HEADER                                                       -->
     <!-- ============================================================ -->
     <h1>📚 Library ERP – Complete Installation &amp; Deployment Guide</h1>
-    <p style="font-size: 1.1rem; color: #2c5a7a;">
+    <p style="font-size: 16px; color: #2c5a7a; font-weight: 500; margin-top: 0.3rem;">
         Step‑by‑step instructions for <strong>Windows</strong> (XAMPP / WAMP),
         <strong>macOS</strong> (MAMP / native), and <strong>Linux</strong> (Ubuntu / CentOS).
         Includes <strong>performance tuning</strong>, <strong>security hardening</strong>,
@@ -326,8 +820,32 @@
     </p>
 
     <!-- ============================================================ -->
+    <!--  TABLE OF CONTENTS                                            -->
+    <!-- ============================================================ -->
+    <div class="toc">
+        <h3>📑 Table of Contents</h3>
+        <ul>
+            <li><a href="#section-download">📥 1. Download from GitHub</a></li>
+            <li><a href="#section-requirements">⚙️ 2. System Requirements</a></li>
+            <li><a href="#section-windows">🪟 3. Windows Installation</a></li>
+            <li><a href="#section-macos">🍎 4. macOS Installation</a></li>
+            <li><a href="#section-ubuntu">🐧 5. Ubuntu / Linux Installation</a></li>
+            <li><a href="#section-centos">🐧 6. CentOS / RHEL / Fedora</a></li>
+            <li><a href="#section-performance">⚡ 7. Performance Tuning</a></li>
+            <li><a href="#section-composer">📊 8. Composer for Excel/PDF</a></li>
+            <li><a href="#section-cron">⏰ 9. Cron Jobs</a></li>
+            <li><a href="#section-security">🔒 10. Security Hardening</a></li>
+            <li><a href="#section-backup">💾 11. Backup &amp; Restore</a></li>
+            <li><a href="#section-troubleshooting">🔧 12. Troubleshooting</a></li>
+            <li><a href="#section-uninstall">🗑️ 13. Uninstall</a></li>
+            <li><a href="#section-reset">⚙️ 14. Reset to Default</a></li>
+        </ul>
+    </div>
+
+    <!-- ============================================================ -->
     <!--  DOWNLOAD BOX                                                 -->
     <!-- ============================================================ -->
+    <h2 id="section-download">1. 📥 Download from GitHub</h2>
     <div class="download-box">
         <h2>📥 Download from GitHub</h2>
         <p>
@@ -341,39 +859,15 @@
            class="download-btn" target="_blank">
             ⬇️ Download ZIP
         </a>
-        <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.9;">
+        <p style="margin-top: 0.6rem; font-size: 13px; opacity: 0.9;">
             ⭐ Star the repository on GitHub to support the project!
         </p>
     </div>
 
     <!-- ============================================================ -->
-    <!--  EXTRACTION INSTRUCTION (CRITICAL)                            -->
-    <!-- ============================================================ -->
-    <div class="highlight-box" style="border-left: 5px solid #1e6f9f;">
-        <h3 style="margin-top: 0;">📂 Important – Locate the Application Folder</h3>
-        <p>
-            After downloading the ZIP file, <strong>extract</strong> it. Inside the extracted
-            folder (<code>Library-Management-System-main</code>) you will find a
-            <strong>ZIP file</strong> named <code>library-system.zip</code>.
-        </p>
-        <p>
-            <strong>Extract <code>library-system.zip</code></strong> – this contains the
-            actual application. The extracted folder <code>library-system</code> is what
-            you will copy to your web server's document root.
-        </p>
-        <div class="folder-structure">
-            Library-Management-System-main/<br />
-            &nbsp;&nbsp;├── library-system.zip &nbsp;← <strong>extract this</strong><br />
-            &nbsp;&nbsp;└── (other files)<br /><br />
-            After extraction:<br />
-            &nbsp;&nbsp;└── library-system/ &nbsp;← <strong>application folder</strong>
-        </div>
-    </div>
-
-    <!-- ============================================================ -->
     <!--  SYSTEM REQUIREMENTS                                          -->
     <!-- ============================================================ -->
-    <h2>1. System Requirements</h2>
+    <h2 id="section-requirements">2. ⚙️ System Requirements</h2>
     <table>
         <tr><th>Component</th><th>Minimum Requirement</th></tr>
         <tr><td>Web Server</td><td>Apache 2.4+ (or Nginx with PHP-FPM)</td></tr>
@@ -391,16 +885,16 @@
     <!-- ============================================================ -->
     <!--  WINDOWS (XAMPP)                                              -->
     <!-- ============================================================ -->
-    <h2>2. Windows – XAMPP</h2>
+    <h2 id="section-windows">3. 🪟 Windows – XAMPP</h2>
 
-    <h3>2.1 Install XAMPP</h3>
+    <h3>3.1 Install XAMPP</h3>
     <ul>
-        <li>Download XAMPP for Windows from <a href="https://www.apachefriends.org/" target="_blank">apachefriends.org</a> (PHP 8.2 or 8.3 version).</li>
+        <li>Download XAMPP for Windows from <a href="https://www.apachefriends.org/" target="_blank" class="highlight-apache">apachefriends.org</a> (PHP 8.2 or 8.3 version).</li>
         <li>Run the installer – accept defaults (<code>C:\xampp</code>).</li>
         <li>Launch XAMPP Control Panel and start <strong>Apache</strong>.</li>
     </ul>
 
-    <h3>2.2 Enable Required PHP Extensions</h3>
+    <h3>3.2 Enable Required PHP Extensions</h3>
     <ul>
         <li>Open <code>C:\xampp\php\php.ini</code> in Notepad.</li>
         <li>Uncomment (remove the leading <code>;</code>) these lines:
@@ -415,21 +909,21 @@ extension=intl</pre>
         <li><strong>Save</strong> and <strong>restart Apache</strong> from the XAMPP Control Panel.</li>
     </ul>
 
-    <h3>2.3 Deploy the Application</h3>
+    <h3>3.3 Deploy the Application</h3>
     <ul>
         <li>Extract the downloaded <code>Library-Management-System-main.zip</code>.</li>
         <li>Inside it, find and extract <code>library-system.zip</code> → you get the <code>library-system</code> folder.</li>
         <li>Copy the <code>library-system</code> folder to <code>C:\xampp\htdocs\</code>.</li>
     </ul>
 
-    <h3>2.4 Set Permissions</h3>
+    <h3>3.4 Set Permissions</h3>
     <p>Right‑click the <code>uploads</code>, <code>backups</code>, and <code>config</code> folders inside <code>library-system</code> → Properties → Security → give <strong>Modify/Write</strong> permission to <code>Everyone</code> or the web server user.</p>
     <p>Alternatively, run as Administrator:</p>
     <pre>icacls "C:\xampp\htdocs\library-system\uploads" /grant Everyone:F /T
 icacls "C:\xampp\htdocs\library-system\backups" /grant Everyone:F /T
 icacls "C:\xampp\htdocs\library-system\config" /grant Everyone:F /T</pre>
 
-    <h3>2.5 Access the System</h3>
+    <h3>3.5 Access the System</h3>
     <p>Open browser: <a href="http://localhost/library-system/" target="_blank">http://localhost/library-system/</a></p>
     <ul>
         <li><strong>Default login:</strong> <code>admin</code> / <code>admin123</code></li>
@@ -437,15 +931,16 @@ icacls "C:\xampp\htdocs\library-system\config" /grant Everyone:F /T</pre>
         <li><strong>Visitor Log:</strong> <a href="http://localhost/library-system/visitor" target="_blank">http://localhost/library-system/visitor</a></li>
     </ul>
 
+    <!-- RESET TO DEFAULT - WINDOWS -->
     <div class="reset-highlight">
         <h3>⚙️ <strong>RESET TO DEFAULT</strong> – System Configuration</h3>
-        <p style="font-size: 1.1rem;">
+        <p>
             After installation, you can restore all system settings to their
             <strong>factory defaults</strong> with a single click.
         </p>
         <p>
             <span class="badge-reset">📍 Navigation</span>
-            <strong style="font-size: 1.2rem;">
+            <strong style="font-size: 1.1rem;">
                 Admin Dashboard → System Settings → System Configuration
             </strong>
         </p>
@@ -460,9 +955,9 @@ icacls "C:\xampp\htdocs\library-system\config" /grant Everyone:F /T</pre>
         </div>
     </div>
 
-    <h3>2.6 Windows – WAMP (Alternative)</h3>
+    <h3>3.6 Windows – WAMP (Alternative)</h3>
     <ul>
-        <li>Install WAMP from <a href="https://www.wampserver.com/" target="_blank">wampserver.com</a>.</li>
+        <li>Install WAMP from <a href="https://www.wampserver.com/" target="_blank">https://www.wampserver.com/</a>.</li>
         <li>Enable PHP extensions via the WAMP tray icon → PHP → Extensions (enable <strong>php_zip</strong>).</li>
         <li>Place the <code>library-system</code> folder inside <code>C:\wamp64\www\</code>.</li>
         <li>Access at <a href="http://localhost/library-system/" target="_blank">http://localhost/library-system/</a></li>
@@ -471,11 +966,11 @@ icacls "C:\xampp\htdocs\library-system\config" /grant Everyone:F /T</pre>
     <!-- ============================================================ -->
     <!--  MACOS                                                        -->
     <!-- ============================================================ -->
-    <h2>3. macOS</h2>
+    <h2 id="section-macos">4. 🍎 macOS</h2>
 
-    <h3>3.1 Using MAMP (Recommended)</h3>
+    <h3>4.1 Using MAMP (Recommended)</h3>
     <ul>
-        <li>Download MAMP from <a href="https://www.mamp.info/" target="_blank">mamp.info</a> (free version).</li>
+        <li>Download MAMP from <a href="https://www.mamp.info/" target="_blank" class="highlight-mamp">mamp.info</a> (free version).</li>
         <li>Install and launch MAMP. Set PHP version to 8.x in preferences.</li>
         <li>Extract <code>Library-Management-System-main.zip</code> → extract <code>library-system.zip</code> → get the <code>library-system</code> folder.</li>
         <li>Copy <code>library-system</code> to <code>/Applications/MAMP/htdocs/</code>.</li>
@@ -488,15 +983,16 @@ chmod -R 777 library-system/uploads library-system/backups library-system/config
         <li>Start MAMP servers and access <a href="http://localhost:8888/library-system/" target="_blank">http://localhost:8888/library-system/</a></li>
     </ul>
 
+    <!-- RESET TO DEFAULT - MACOS MAMP -->
     <div class="reset-highlight">
         <h3>⚙️ <strong>RESET TO DEFAULT</strong> – System Configuration</h3>
-        <p style="font-size: 1.1rem;">
+        <p>
             After installation, you can restore all system settings to their
             <strong>factory defaults</strong> with a single click.
         </p>
         <p>
             <span class="badge-reset">📍 Navigation</span>
-            <strong style="font-size: 1.2rem;">
+            <strong style="font-size: 1.1rem;">
                 Admin Dashboard → System Settings → System Configuration
             </strong>
         </p>
@@ -511,9 +1007,9 @@ chmod -R 777 library-system/uploads library-system/backups library-system/config
         </div>
     </div>
 
-    <h3>3.2 Using Native Apache &amp; PHP (Advanced)</h3>
+    <h3>4.2 Using Native Apache &amp; PHP (Advanced)</h3>
     <ul>
-        <li>Install Homebrew: <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></li>
+        <li>Install Homebrew: <code>/bin/bash -c "(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></li>
         <li>Install PHP 8.3: <code>brew install php@8.3</code></li>
         <li>Enable ZipArchive: ensure it's enabled in <code>/usr/local/etc/php/8.3/php.ini</code>.</li>
         <li>Place <code>library-system</code> in <code>/Library/WebServer/Documents/</code>:
@@ -531,72 +1027,157 @@ sudo chmod -R 777 library-system/uploads library-system/backups library-system/c
     </ul>
 
     <!-- ============================================================ -->
-    <!--  UBUNTU / LINUX (FULL SETUP INCLUDED)                         -->
+    <!--  UBUNTU / LINUX                                               -->
     <!-- ============================================================ -->
-    <h2>4. Ubuntu / Linux – Complete Setup</h2>
+    <h2 id="section-ubuntu">5. 🐧 Ubuntu / Linux – Complete Setup</h2>
 
-    <h3>4.0 Install Apache &amp; PHP 8.3</h3>
+    <!-- ====== MANUAL INSTALLATION STEPS ====== -->
+    <div class="manual-install-box">
+        <h3>Manual Installation – Ubuntu / Linux</h3>
+        <p style="font-size: 15px;">Follow these simple steps to download, extract, and deploy the application on your Ubuntu/Linux server.</p>
+
+        <div class="step-box">
+            <h4>📥 Step 1: Download from GitHub</h4>
+            <p>Visit the official GitHub repository and download the ZIP file:</p>
+            <ul>
+                <li>Go to: <a href="https://github.com/sameemonm1-hue/Library-Management-System" target="_blank" class="highlight-github">https://github.com/sameemonm1-hue/Library-Management-System</a></li>
+                <li>Click the green <strong>"Code"</strong> button → <strong>"Download ZIP"</strong></li>
+                <li>Or use the <a href="https://github.com/sameemonm1-hue/Library-Management-System/archive/main.zip" target="_blank" class="highlight-link">⬇️ Download ZIP</a> button in the download box at the top of this guide.</li>
+            </ul>
+            <div class="note">
+                💡 The downloaded file will be named <code>Library-Management-System-main.zip</code>.
+            </div>
+        </div>
+
+        <div class="step-box">
+            <h4>📂 Step 2: Extract the Main Archive</h4>
+            <p>Extract the downloaded ZIP file. On Ubuntu, you can right-click the file and select <strong>"Extract Here"</strong> or use the Archive Manager.</p>
+            <div class="note">
+                📁 After extraction, you'll see a folder named <code>Library-Management-System-main</code>.
+            </div>
+        </div>
+
+        <div class="step-box">
+            <h4>🔍 Step 3: Locate the <code>library-system.zip</code> File</h4>
+            <p>Inside the extracted folder, find the <strong>ZIP file</strong> named <code>library-system.zip</code> – this is the actual application archive.</p>
+            <div class="folder-structure">
+                <strong>📁 Folder Structure:</strong><br />
+                <code>Library-Management-System-main/</code><br />
+                &nbsp;&nbsp;├── <code>library-system.zip</code> &nbsp;← <strong>THIS is the application archive</strong><br />
+                &nbsp;&nbsp;├── Installation Guide.html<br />
+                &nbsp;&nbsp;└── (other files)<br />
+            </div>
+            <div class="note warning">
+                ⚠️ <strong>Important:</strong> Do NOT copy the entire <code>Library-Management-System-main</code> folder to your web root.
+                You need to extract <code>library-system.zip</code> first.
+            </div>
+        </div>
+
+        <div class="step-box">
+            <h4>📦 Step 4: Extract <code>library-system.zip</code></h4>
+            <p>Right-click <code>library-system.zip</code> and select <strong>"Extract Here"</strong> to get the actual application folder.</p>
+            <div class="note success">
+                ✅ After extraction, you now have the <code>library-system</code> folder – this is the application folder.
+            </div>
+        </div>
+
+        <div class="step-box">
+            <h4>📁 Step 5: Place the Application in Root (Home)</h4>
+            <p>Move or copy the <code>library-system</code> folder to your home directory for easy access.</p>
+            <div class="note">
+                💡 You can simply drag and drop the <code>library-system</code> folder to your home directory.
+            </div>
+        </div>
+
+        <div class="step-box">
+            <h4>💻 Step 6: Open Terminal &amp; Switch to Root</h4>
+            <p>Open a terminal by pressing <strong>Ctrl + Alt + T</strong> or searching for "Terminal" in the applications menu.</p>
+            <p>Type the following command to switch to the root user:</p>
+            <div class="terminal">
+                <pre><code><span class="prompt"></span> <span class="cmd">sudo su</span></code></pre>
+            </div>
+            <p>Enter your password when prompted. The terminal prompt will change to <span style="font-family: monospace; background: #0a0f1a; color: #ff6b6b; padding: 0.1rem 0.5rem; border-radius: 3px; font-weight: 700; border: 1px solid rgba(255, 107, 107, 0.3);">root@home:~#</span> indicating you are now logged in as root.</p>
+            <div class="note warning">
+                ⚠️ <strong>Security Note:</strong> Use <code>sudo su</code> with caution. Always type <code>exit</code> to leave root mode after completing the deployment.
+            </div>
+        </div>
+
+        <div class="step-box">
+            <h4>📋 Step 7: Copy the Application to Web Root</h4>
+            <p>As root, copy the <code>library-system</code> folder from your home directory to Apache's web root:</p>
+            <div class="terminal">
+                <pre><code><span class="user">root@home:~#</span> <span class="cmd-highlight">sudo cp -r library-system /var/www/html/</span></code></pre>
+            </div>
+            <div class="note success">
+                ✅ The <code>library-system</code> folder is now deployed at <code>/var/www/html/library-system/</code>
+            </div>
+        </div>
+
+
+<div class="step-box">
+    <h4>🔧 Step 8: Set Correct Permissions</h4>
+    <p>Set ownership and permissions so Apache can read and write to the application. Run these commands in the terminal:</p>
+    <div class="terminal">
+        <pre><code><span class="cmd-highlight">cd /var/www/html</span>
+<span class="cmd-highlight">sudo chown -R www-data:www-data /var/www/html/library-system/</span>
+<span class="cmd-highlight">sudo chmod -R 755 /var/www/html/library-system/</span>
+<span class="cmd-highlight">sudo chmod -R 777 /var/www/html/library-system/uploads/           <span class="comment"># If fail, repeat after installation</span></span>
+<span class="cmd-highlight">sudo chmod -R 777 /var/www/html/library-system/backups/           <span class="comment"># If fail, repeat after installation</span></span>
+<span class="cmd-highlight">sudo chmod -R 777 /var/www/html/library-system/config/            <span class="comment"># Important for SQLite DB creation</span></span></code></pre>
+    </div>
+    <div class="note">
+        💡 The <code>config/</code> folder needs write permission so the system can create the SQLite database file (<code>library.db</code>).
+    </div>
+</div>
+
+        <div class="step-box">
+            <h4>🎯 Step 9: Access the System</h4>
+            <p>Open your browser and navigate to the system URL:</p>
+            <ul>
+                <li><strong>Main System:</strong> <code>http://localhost/library-system/</code> (or <code>http://your-server-ip/library-system/</code>)</li>
+                <li><strong>OPAC:</strong> <code>http://localhost/library-system/opac</code></li>
+                <li><strong>Visitor Log:</strong> <code>http://localhost/library-system/visitor</code></li>
+            </ul>
+            <p><strong>Default Login:</strong></p>
+            <ul>
+                <li><strong>Username:</strong> <code>admin</code></li>
+                <li><strong>Password:</strong> <code>admin123</code></li>
+            </ul>
+            <div class="note warning">
+                ⚠️ <strong>Security Note:</strong> Change the default admin password immediately after first login!
+            </div>
+        </div>
+
+        <div class="note">
+            💡 <strong>Pro Tip:</strong> Using <code>git clone</code> instead of downloading ZIP lets you pull future updates with a single command.
+        </div>
+        <div class="note success">
+            ✅ After following these steps, continue with the <strong>Virtual Host</strong> and <strong>Database Creation</strong> sections below.
+        </div>
+    </div>
+
+    <h3>5.1 Install Apache &amp; PHP 8.3</h3>
+    <p>Run these commands in the terminal to install Apache and PHP:</p>
     <div class="terminal">
         <pre><code><span class="comment"># Update system</span>
-<span class="prompt">$</span> sudo apt update && sudo apt upgrade -y
+<span class="prompt"></span> <span class="cmd">sudo apt update && sudo apt upgrade -y</span>
 
 <span class="comment"># Install Apache, Git, Unzip</span>
-<span class="prompt">$</span> sudo apt install -y apache2 git unzip
+<span class="prompt"></span> <span class="cmd">sudo apt install -y apache2 git unzip</span>
 
-<span class="comment"># Install PHP 8.3 and required extensions (includes ZipArchive)</span>
-<span class="prompt">$</span> sudo apt install -y php8.3 libapache2-mod-php8.3 php8.3-sqlite3 \
-  php8.3-gd php8.3-zip php8.3-mbstring php8.3-curl php8.3-xml php8.3-intl
+<span class="comment"># Install PHP 8.3 and required extensions</span>
+<span class="prompt"></span> <span class="cmd">sudo apt install -y php8.3 libapache2-mod-php8.3 php8.3-sqlite3 \
+  php8.3-gd php8.3-zip php8.3-mbstring php8.3-curl php8.3-xml php8.3-intl</span>
 
 <span class="comment"># Enable Apache mod_rewrite</span>
-<span class="prompt">$</span> sudo a2enmod rewrite
-<span class="prompt">$</span> sudo systemctl restart apache2</code></pre>
+<span class="prompt"></span> <span class="cmd">sudo a2enmod rewrite</span>
+<span class="prompt"></span> <span class="cmd">sudo systemctl restart apache2</span></code></pre>
     </div>
 
-    <h3>4.1 Download &amp; Extract the Application</h3>
-    <div class="highlight-box">
-        <p><strong>Step 1 – Download the ZIP to your home directory:</strong></p>
-        <div class="terminal">
-            <pre><code><span class="prompt">$</span> cd ~
-<span class="prompt">$</span> wget https://github.com/sameemonm1-hue/Library-Management-System/archive/main.zip</code></pre>
-        </div>
-
-        <p><strong>Step 2 – Extract the main archive:</strong></p>
-        <div class="terminal">
-            <pre><code><span class="prompt">$</span> unzip main.zip</code></pre>
-        </div>
-        <p>This creates the folder <code>Library-Management-System-main</code> in your home directory.</p>
-
-        <p><strong>Step 3 – Extract the application archive:</strong></p>
-        <div class="terminal">
-            <pre><code><span class="prompt">$</span> cd Library-Management-System-main
-<span class="prompt">$</span> unzip library-system.zip</code></pre>
-        </div>
-        <p>Now you have the <code>library-system</code> folder inside <code>~/Library-Management-System-main/</code>.</p>
-
-        <p><strong>Step 4 – Copy the application folder to the web root:</strong></p>
-        <div class="terminal">
-            <pre><code><span class="prompt">$</span> sudo cp -r ~/Library-Management-System-main/library-system /var/www/html/</code></pre>
-        </div>
-        <div class="note">
-            💡 If you prefer to move (instead of copy), use <code>sudo mv</code> instead of <code>cp -r</code>.
-            The <code>library-system</code> folder is now located at <code>/var/www/html/library-system</code>.
-        </div>
-    </div>
-
-    <h3>4.2 Set Correct Permissions</h3>
-    <div class="terminal">
-        <pre><code><span class="prompt">$</span> cd /var/www/html
-<span class="prompt">$</span> sudo chown -R www-data:www-data /var/www/html/library-system/
-<span class="prompt">$</span> sudo chmod -R 755 /var/www/html/library-system/
-<span class="prompt">$</span> sudo chmod -R 777 /var/www/html/library-system/uploads/           <span class="comment"># If fail, repeat after installation</span>
-<span class="prompt">$</span> sudo chmod -R 777 /var/www/html/library-system/backups/           <span class="comment"># If fail, repeat after installation</span>
-<span class="prompt">$</span> sudo chmod -R 777 /var/www/html/library-system/config/            <span class="comment"># Important for SQLite DB creation</span></code></pre>
-    </div>
-
-    <h3>4.3 Configure Virtual Host (Recommended)</h3>
+    <h3>5.2 Configure Virtual Host (Recommended)</h3>
     <div class="terminal">
         <pre><code><span class="comment"># Create a new virtual host configuration</span>
-<span class="prompt">$</span> sudo gedit /etc/apache2/sites-available/library.conf</code></pre>
+<span class="prompt"></span> <span class="cmd">sudo nano /etc/apache2/sites-available/library.conf</span></code></pre>
     </div>
     <p>Paste the following:</p>
     <pre>&lt;VirtualHost *:80&gt;
@@ -607,22 +1188,22 @@ sudo chmod -R 777 library-system/uploads library-system/backups library-system/c
         AllowOverride All
         Require all granted
     &lt;/Directory&gt;
-    ErrorLog ${APACHE_LOG_DIR}/library-error.log
-    CustomLog ${APACHE_LOG_DIR}/library-access.log combined
+    ErrorLog {APACHE_LOG_DIR}/library-error.log
+    CustomLog {APACHE_LOG_DIR}/library-access.log combined
 &lt;/VirtualHost&gt;</pre>
     <div class="terminal">
         <pre><code><span class="comment"># Enable the site and reload Apache</span>
-<span class="prompt">$</span> sudo a2ensite library.conf
-<span class="prompt">$</span> sudo a2dissite 000-default.conf
-<span class="prompt">$</span> sudo systemctl reload apache2
+<span class="prompt"></span> <span class="cmd">sudo a2ensite library.conf</span>
+<span class="prompt"></span> <span class="cmd">sudo a2dissite 000-default.conf</span>
+<span class="prompt"></span> <span class="cmd">sudo systemctl reload apache2</span>
 
 <span class="comment"># Add to /etc/hosts for local access</span>
-<span class="prompt">$</span> echo "127.0.0.1 library.local" | sudo tee -a /etc/hosts</code></pre>
+<span class="prompt"></span> <span class="cmd">echo "127.0.0.1 library.local" | sudo tee -a /etc/hosts</span></code></pre>
     </div>
 
-    <!-- ====== REFRESH – repeat three or more times for creating DB ====== -->
+    <h3>5.3 Database Creation – Important!</h3>
     <div class="highlight-box" style="border-left: 5px solid #e67e22;">
-        <h3>⚠️ REFRESH – repeat three or more times for creating DB</h3>
+        <h3 style="margin-top: 0;">⚠️ REFRESH – repeat three or more times for creating DB</h3>
         <p>
             If the database is <strong>not</strong> created automatically on the first visit,
             simply <strong>refresh the page 3–4 times</strong>. The system may need a few requests
@@ -634,32 +1215,25 @@ sudo chmod -R 777 library-system/uploads library-system/backups library-system/c
             permissions on the <code>uploads/</code> and <code>backups/</code> folders:
         </p>
         <div class="terminal">
-            <pre><code><span class="prompt">$</span> cd /var/www/html
-<span class="prompt">$</span> sudo chmod -R 777 /var/www/html/library-system/uploads/
-<span class="prompt">$</span> sudo chmod -R 777 /var/www/html/library-system/backups/</code></pre>
+            <pre><code><span class="prompt"></span> <span class="cmd">cd /var/www/html</span>
+<span class="prompt"></span> <span class="cmd">sudo chmod -R 777 /var/www/html/library-system/uploads/</span>
+<span class="prompt"></span> <span class="cmd">sudo chmod -R 777 /var/www/html/library-system/backups/</span></code></pre>
         </div>
         <div class="note success">
             ✅ After running the commands, refresh the page again – the database should be created.
         </div>
     </div>
 
-    <p><strong>Access the System:</strong></p>
-    <ul>
-        <li><a href="http://library.local/" target="_blank">http://library.local/</a> – Main system</li>
-        <li><a href="http://library.local/opac" target="_blank">http://library.local/opac</a> – OPAC</li>
-        <li><a href="http://library.local/visitor" target="_blank">http://library.local/visitor</a> – Visitor Log</li>
-    </ul>
-    <p><strong>Default login:</strong> <code>admin</code> / <code>admin123</code></p>
-
+    <!-- RESET TO DEFAULT - UBUNTU -->
     <div class="reset-highlight">
         <h3>⚙️ <strong>RESET TO DEFAULT</strong> – System Configuration</h3>
-        <p style="font-size: 1.1rem;">
+        <p>
             After installation, you can restore all system settings to their
             <strong>factory defaults</strong> with a single click.
         </p>
         <p>
             <span class="badge-reset">📍 Navigation</span>
-            <strong style="font-size: 1.2rem;">
+            <strong style="font-size: 1.1rem;">
                 Admin Dashboard → System Settings → System Configuration
             </strong>
         </p>
@@ -677,47 +1251,54 @@ sudo chmod -R 777 library-system/uploads library-system/backups library-system/c
     <!-- ============================================================ -->
     <!--  CENTOS / RHEL / FEDORA                                       -->
     <!-- ============================================================ -->
-    <h2>5. CentOS / RHEL / Fedora</h2>
+    <h2 id="section-centos">6. 🐧 CentOS / RHEL / Fedora</h2>
+
+    <h3>6.1 Install Dependencies</h3>
     <div class="terminal">
         <pre><code><span class="comment"># Install EPEL and Remi repositories</span>
-<span class="prompt">$</span> sudo dnf install epel-release
-<span class="prompt">$</span> sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
-<span class="prompt">$</span> sudo dnf module reset php
-<span class="prompt">$</span> sudo dnf module install php:remi-8.3
+<span class="prompt"></span> <span class="cmd">sudo dnf install epel-release</span>
+<span class="prompt"></span> <span class="cmd">sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm</span>
+<span class="prompt"></span> <span class="cmd">sudo dnf module reset php</span>
+<span class="prompt"></span> <span class="cmd">sudo dnf module install php:remi-8.3</span>
 
 <span class="comment"># Install Apache and PHP extensions (including zip)</span>
-<span class="prompt">$</span> sudo dnf install httpd php php-sqlite3 php-gd php-zip php-mbstring \
-  php-curl php-xml php-intl git unzip
+<span class="prompt"></span> <span class="cmd">sudo dnf install httpd php php-sqlite3 php-gd php-zip php-mbstring \
+  php-curl php-xml php-intl git unzip</span>
 
 <span class="comment"># Enable and start Apache</span>
-<span class="prompt">$</span> sudo systemctl enable httpd
-<span class="prompt">$</span> sudo systemctl start httpd
+<span class="prompt"></span> <span class="cmd">sudo systemctl enable httpd</span>
+<span class="prompt"></span> <span class="cmd">sudo systemctl start httpd</span></code></pre>
+    </div>
 
-<span class="comment"># Deploy (same extraction steps as Ubuntu, then copy to /var/www/html/)</span>
-<span class="prompt">$</span> sudo cp -r ~/Library-Management-System-main/library-system /var/www/html/
+    <h3>6.2 Deploy the Application</h3>
+    <p>Follow the <strong>Manual Installation Steps</strong> from the Ubuntu section above (Steps 1-8).</p>
+    <div class="terminal">
+        <pre><code><span class="comment"># After extraction, copy to web root</span>
+<span class="prompt"></span> <span class="cmd">sudo cp -r ~/library-system /var/www/html/</span>
 
-<span class="comment"># Set permissions</span>
-<span class="prompt">$</span> sudo chown -R apache:apache /var/www/html/library-system/
-<span class="prompt">$</span> sudo chmod -R 755 /var/www/html/library-system/
-<span class="prompt">$</span> sudo chmod -R 777 /var/www/html/library-system/{uploads,backups,config}
+<span class="comment"># Set permissions for CentOS/RHEL</span>
+<span class="prompt"></span> <span class="cmd">sudo chown -R apache:apache /var/www/html/library-system/</span>
+<span class="prompt"></span> <span class="cmd">sudo chmod -R 755 /var/www/html/library-system/</span>
+<span class="prompt"></span> <span class="cmd">sudo chmod -R 777 /var/www/html/library-system/{uploads,backups,config}</span>
 
 <span class="comment"># Allow .htaccess overrides</span>
-<span class="prompt">$</span> sudo gedit /etc/httpd/conf/httpd.conf   <span class="comment"># Set AllowOverride All</span>
+<span class="prompt"></span> <span class="cmd">sudo nano /etc/httpd/conf/httpd.conf</span>   <span class="comment"># Set AllowOverride All</span>
 
 <span class="comment"># Restart Apache</span>
-<span class="prompt">$</span> sudo systemctl restart httpd</code></pre>
+<span class="prompt"></span> <span class="cmd">sudo systemctl restart httpd</span></code></pre>
     </div>
     <p>Access at <code>http://your-server-ip/library-system/</code></p>
 
+    <!-- RESET TO DEFAULT - CENTOS -->
     <div class="reset-highlight">
         <h3>⚙️ <strong>RESET TO DEFAULT</strong> – System Configuration</h3>
-        <p style="font-size: 1.1rem;">
+        <p>
             After installation, you can restore all system settings to their
             <strong>factory defaults</strong> with a single click.
         </p>
         <p>
             <span class="badge-reset">📍 Navigation</span>
-            <strong style="font-size: 1.2rem;">
+            <strong style="font-size: 1.1rem;">
                 Admin Dashboard → System Settings → System Configuration
             </strong>
         </p>
@@ -733,74 +1314,64 @@ sudo chmod -R 777 library-system/uploads library-system/backups library-system/c
     </div>
 
     <!-- ============================================================ -->
-    <!--  POST-INSTALLATION TUNING (ADVANCED)                          -->
+    <!--  PERFORMANCE TUNING                                           -->
     <!-- ============================================================ -->
-    <h2>6. Performance &amp; Error‑Free Configuration</h2>
+    <h2 id="section-performance">7. ⚡ Performance Tuning</h2>
 
-    <h3>6.1 PHP Settings (Recommended)</h3>
+    <h3>7.1 PHP Settings (Recommended)</h3>
     <p>Edit your <code>php.ini</code> file to match these values for optimal performance:</p>
     <pre>memory_limit = 512M
 upload_max_filesize = 100M
 post_max_size = 100M
 max_execution_time = 600
 max_input_time = 600
-date.timezone = Asia/Kolkata   <span class="comment"># adjust to your region</span>
+date.timezone = Asia/Kolkata
 
 <span class="comment"># Enable OPCache for faster execution</span>
 opcache.enable = 1
 opcache.memory_consumption = 128
 opcache.max_accelerated_files = 10000
-opcache.revalidate_freq = 0       <span class="comment"># disable for development, set 60 in production</span>
 
-<span class="comment"># Enable error logging (useful for debugging)</span>
+<span class="comment"># Enable error logging</span>
 error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
 display_errors = Off
 log_errors = On
 error_log = /var/log/php_errors.log</pre>
     <p>After changes, restart your web server.</p>
 
-    <h3>6.2 Enable SQLite WAL Mode (Already Set)</h3>
+    <h3>7.2 Enable SQLite WAL Mode</h3>
     <p>The system automatically enables <code>PRAGMA journal_mode=WAL</code> for better concurrency and performance – no action required.</p>
 
-    <h3>6.3 Configure .htaccess for Security</h3>
-    <p>Ensure the following <code>.htaccess</code> file is present in the root of your <code>library-system</code> folder to block direct access to sensitive directories:</p>
+    <h3>7.3 Configure .htaccess for Security</h3>
+    <p>Ensure the following <code>.htaccess</code> file is present in the root of your <code>library-system</code> folder:</p>
     <pre>&lt;IfModule mod_rewrite.c&gt;
     RewriteEngine On
-
-    # Block access to config, backups, vendor, etc.
     RewriteRule ^(config|backups|vendor|logs|temp|cache)/ - [F,L]
-
-    # Prevent directory listing
     Options -Indexes
-
-    # Redirect to index.php for clean URLs (if needed)
-    # RewriteCond %{REQUEST_FILENAME} !-f
-    # RewriteCond %{REQUEST_FILENAME} !-d
-    # RewriteRule ^(.*)$ index.php [QSA,L]
 &lt;/IfModule&gt;</pre>
 
     <!-- ============================================================ -->
-    <!--  OPTIONAL – COMPOSER                                          -->
+    <!--  COMPOSER                                                     -->
     <!-- ============================================================ -->
-    <h2>7. Optional – Composer for Excel &amp; PDF Reports</h2>
+    <h2 id="section-composer">8. 📊 Composer for Excel &amp; PDF Reports</h2>
     <p>If you need advanced reporting (Excel, PDF), install Composer and the required packages:</p>
     <div class="terminal">
-        <pre><code><span class="prompt">$</span> cd /var/www/html/library-system
-<span class="prompt">$</span> sudo apt install -y composer   <span class="comment"># or brew install composer on macOS</span>
-<span class="prompt">$</span> composer require phpoffice/phpspreadsheet
-<span class="prompt">$</span> composer require dompdf/dompdf</code></pre>
+        <pre><code><span class="prompt"></span> <span class="cmd">cd /var/www/html/library-system</span>
+<span class="prompt"></span> <span class="cmd">sudo apt install -y composer</span>
+<span class="prompt"></span> <span class="cmd">composer require phpoffice/phpspreadsheet</span>
+<span class="prompt"></span> <span class="cmd">composer require dompdf/dompdf</span></code></pre>
     </div>
     <div class="note">
         If Composer is not available, the system falls back to HTML/print‑based PDFs.
     </div>
 
     <!-- ============================================================ -->
-    <!--  CRON JOBS (AUTOMATION)                                       -->
+    <!--  CRON JOBS                                                    -->
     <!-- ============================================================ -->
-    <h2>8. Scheduled Tasks (Cron)</h2>
+    <h2 id="section-cron">9. ⏰ Scheduled Tasks (Cron)</h2>
     <p>Set up these cron jobs to automate overdue notifications, email processing, and backup rotation:</p>
     <div class="terminal">
-        <pre><code><span class="prompt">$</span> sudo crontab -e</code></pre>
+        <pre><code><span class="prompt"></span> <span class="cmd">sudo crontab -e</span></code></pre>
     </div>
     <pre># Daily tasks (overdue reminders, fine calculation)
 0 2 * * * /usr/bin/php /var/www/html/library-system/cron/daily_tasks.php >> /var/log/library-cron.log 2>&1
@@ -808,7 +1379,7 @@ error_log = /var/log/php_errors.log</pre>
 # Process email queue every 5 minutes
 */5 * * * * /usr/bin/php /var/www/html/library-system/cron/process_email_queue.php >> /var/log/library-email.log 2>&1
 
-# Weekly backup rotation (keeps last 10 backups)
+# Weekly backup rotation
 0 3 * * 1 /usr/bin/php /var/www/html/library-system/cron/weekly_tasks.php >> /var/log/library-cron.log 2>&1</pre>
     <div class="note">
         Adjust paths if your installation is in a different directory.
@@ -817,11 +1388,11 @@ error_log = /var/log/php_errors.log</pre>
     <!-- ============================================================ -->
     <!--  SECURITY HARDENING                                           -->
     <!-- ============================================================ -->
-    <h2>9. Security Hardening</h2>
+    <h2 id="section-security">10. 🔒 Security Hardening</h2>
     <ul>
         <li><strong>Change default passwords</strong> immediately after login (admin, staff1).</li>
-        <li><strong>Enable HTTPS</strong> using Let's Encrypt: <code>sudo certbot --apache -d yourdomain.com</code> (Ubuntu) or equivalent.</li>
-        <li><strong>Restrict access</strong> to <code>config/</code>, <code>backups/</code>, <code>uploads/</code> via <code>.htaccess</code> (included).</li>
+        <li><strong>Enable HTTPS</strong> using Let's Encrypt: <code>sudo certbot --apache -d yourdomain.com</code></li>
+        <li><strong>Restrict access</strong> to <code>config/</code>, <code>backups/</code>, <code>uploads/</code> via <code>.htaccess</code>.</li>
         <li><strong>Enable fail2ban</strong> to block brute‑force attacks on login.</li>
         <li><strong>Regular updates</strong>: <code>sudo apt update &amp;&amp; sudo apt upgrade -y</code>.</li>
         <li><strong>Pull latest code</strong> from GitHub periodically.</li>
@@ -830,15 +1401,15 @@ error_log = /var/log/php_errors.log</pre>
     <!-- ============================================================ -->
     <!--  BACKUP & RESTORE                                             -->
     <!-- ============================================================ -->
-    <h2>10. Backup &amp; Restore</h2>
-    <h3>10.1 Create a Backup</h3>
+    <h2 id="section-backup">11. 💾 Backup &amp; Restore</h2>
+    <h3>11.1 Create a Backup</h3>
     <ul>
         <li>Log in as admin → <strong>System Settings → Backup</strong>.</li>
         <li>Click <strong>"Create Backup"</strong> – a <code>.zip</code> file will be saved in the <code>backups/</code> folder.</li>
-        <li>Backups include the SQLite database and all uploaded files (covers, eBooks).</li>
+        <li>Backups include the SQLite database and all uploaded files.</li>
     </ul>
 
-    <h3>10.2 Restore from a Backup</h3>
+    <h3>11.2 Restore from a Backup</h3>
     <ul>
         <li>In the same Backup section, select a previous backup and click <strong>"Restore"</strong>.</li>
         <li>The system will replace the current database and files with the backup version.</li>
@@ -848,9 +1419,9 @@ error_log = /var/log/php_errors.log</pre>
     </div>
 
     <!-- ============================================================ -->
-    <!--  TROUBLESHOOTING QUICK REFERENCE                              -->
+    <!--  TROUBLESHOOTING                                              -->
     <!-- ============================================================ -->
-    <h2>11. Troubleshooting Quick Reference</h2>
+    <h2 id="section-troubleshooting">12. 🔧 Troubleshooting Quick Reference</h2>
     <table>
         <tr><th>Issue</th><th>Solution</th></tr>
         <tr>
@@ -859,11 +1430,11 @@ error_log = /var/log/php_errors.log</pre>
         </tr>
         <tr>
             <td><strong>White screen / 500 error</strong></td>
-            <td>Check Apache error logs: <code>sudo tail -f /var/log/apache2/error.log</code>. Verify all PHP extensions are installed.</td>
+            <td>Check Apache error logs: <code>sudo tail -f /var/log/apache2/error.log</code>.</td>
         </tr>
         <tr>
             <td><strong>Database not created</strong></td>
-            <td>Refresh the page 3–4 times; if still fails, ensure <code>config/</code> is writable (run permission commands again).</td>
+            <td>Refresh the page 3–4 times; ensure <code>config/</code> is writable.</td>
         </tr>
         <tr>
             <td><strong>Upload fails</strong></td>
@@ -871,29 +1442,72 @@ error_log = /var/log/php_errors.log</pre>
         </tr>
         <tr>
             <td><strong>Email not sending</strong></td>
-            <td>Test SMTP in Settings → Notifications. Check the queue with <code>php cron/process_email_queue.php</code>.</td>
+            <td>Test SMTP in Settings → Notifications.</td>
         </tr>
         <tr>
             <td><strong>PDF export blank</strong></td>
-            <td>Install dompdf via Composer, or use the browser's print function as fallback.</td>
+            <td>Install dompdf via Composer, or use browser print.</td>
         </tr>
         <tr>
             <td><strong>Slow performance</strong></td>
-            <td>Enable OPCache, increase memory limit, and ensure SQLite WAL mode is active (it is by default).</td>
+            <td>Enable OPCache, increase memory limit, ensure SQLite WAL mode is active.</td>
         </tr>
     </table>
 
     <!-- ============================================================ -->
-    <!--  UNINSTALL (CLEAN REMOVAL)                                    -->
+    <!--  UNINSTALL                                                    -->
     <!-- ============================================================ -->
-    <h2>12. Uninstall</h2>
+    <h2 id="section-uninstall">13. 🗑️ Uninstall</h2>
     <div class="terminal">
         <pre><code><span class="comment"># For Apache</span>
-<span class="prompt">$</span> sudo a2dissite library.conf   <span class="comment"># if you set up a virtual host</span>
-<span class="prompt">$</span> sudo rm -rf /var/www/html/library-system
-<span class="prompt">$</span> sudo systemctl reload apache2</code></pre>
+<span class="prompt"></span> <span class="cmd">sudo a2dissite library.conf</span>
+<span class="prompt"></span> <span class="cmd">sudo rm -rf /var/www/html/library-system</span>
+<span class="prompt"></span> <span class="cmd">sudo systemctl reload apache2</span></code></pre>
     </div>
     <p>On Windows, simply delete the <code>library-system</code> folder from <code>htdocs</code>.</p>
+
+    <!-- ============================================================ -->
+    <!--  RESET TO DEFAULT - DEDICATED SECTION                         -->
+    <!-- ============================================================ -->
+    <h2 id="section-reset">14. ⚙️ Reset to Default</h2>
+    <div class="reset-highlight" style="margin-top: 0;">
+        <h3>⚙️ <strong>RESET TO DEFAULT</strong> – System Configuration</h3>
+        <p>
+            After installation, you can restore all system settings to their
+            <strong>factory defaults</strong> with a single click.
+        </p>
+        <p>
+            <span class="badge-reset">📍 Navigation</span>
+            <strong style="font-size: 1.1rem;">
+                Admin Dashboard → System Settings → System Configuration
+            </strong>
+        </p>
+        <p>
+            <span class="badge-reset">🔘 Action</span>
+            Click the <strong style="background: #f39c12; color: #fff; padding: 0.2rem 1rem; border-radius: 30px;">RESET TO DEFAULT</strong>
+            button – all settings will be restored to their original values.
+        </p>
+        <div class="note" style="background: #fff8e1; border-left-color: #f39c12; text-align: left;">
+            💡 This is useful if you have made many changes and want to start fresh,
+            or if you encounter configuration issues.
+        </div>
+    </div>
+
+    <div class="highlight-box" style="border-left: 5px solid #1e6f9f; margin-top: 1.2rem;">
+        <h4 style="margin-top: 0;">📋 What Gets Reset?</h4>
+        <ul>
+            <li><strong>Library Settings:</strong> Fine amount, loan duration, max books per user</li>
+            <li><strong>Email Configuration:</strong> SMTP settings, email templates</li>
+            <li><strong>Notification Settings:</strong> Overdue reminders, due date alerts</li>
+            <li><strong>Security Settings:</strong> Password policies, session timeout</li>
+            <li><strong>Appearance:</strong> Theme, logo, layout settings</li>
+            <li><strong>All other system configurations</strong> to their original values</li>
+        </ul>
+        <div class="note warning" style="margin-top: 0.6rem;">
+            ⚠️ <strong>Note:</strong> This does <strong>NOT</strong> delete your database data (books, users, transactions, etc.).
+            Only system <strong>configuration settings</strong> are reset.
+        </div>
+    </div>
 
     <!-- ============================================================ -->
     <!--  FOOTER                                                       -->
